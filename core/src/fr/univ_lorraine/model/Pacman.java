@@ -16,33 +16,40 @@ public class Pacman extends Movable {
 
 	@Override
 	public void changeDir(){
-		int x = (int) this.pos.x;
-		int y = (int) this.pos.y;
+		int nextx = (int) this.pos.x;
+		int nexty = (int) this.pos.y;
 		int type;
+		boolean change = true;
 
-		if(this.pos.x % 1 == 0 && this.pos.y % 1 == 0) {//position entiere:
-			switch(nextDir){
-				case UP:
-					type = this.world.getMaze().getMap(x, y+1);
-					if(type == 1 || type == 2)
-						this.setDirection(UP);
-					break;
-				case RIGHT:
-					type = this.world.getMaze().getMap(x+1, y);
-					if(type == 1 || type == 2)
-						this.setDirection(RIGHT);
-					break;
-				case DOWN:
-					type = this.world.getMaze().getMap(x, y-1);
-					if(type == 1 || type == 2)
-						this.setDirection(DOWN);
-					break;
-				case LEFT:
-					type = this.world.getMaze().getMap(x-1, y);
-					if(type == 1 || type == 2)
-						this.setDirection(LEFT);
-					break;
-			}
+		switch (nextDir) {
+			case UP:
+				nexty++;
+				if (nexty > this.world.getMaze().getHeight() - 1)
+					nexty = 0;
+				break;
+			case RIGHT:
+				nextx++;
+				if (nextx > this.world.getMaze().getWidth() - 1)
+					nextx = 0;
+				break;
+			case DOWN:
+				nexty--;
+				if (nexty < 0)
+					nexty = this.world.getMaze().getHeight() - 1;
+				break;
+			case LEFT:
+				nextx--;
+				if (nextx < 0)
+					nextx = this.world.getMaze().getWidth() - 1;
+				break;
 		}
+		type = this.world.getMaze().getMap(nextx, nexty);
+		for(int non : this.bloquant)
+			if(type == non)
+				change = false;
+
+		if(change)
+			this.setDirection(nextDir);
+
 	}
 }
