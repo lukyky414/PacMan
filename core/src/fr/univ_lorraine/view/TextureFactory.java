@@ -29,6 +29,7 @@ public class TextureFactory {
     			SuperPellet.class,
 				new TextureSuperPellet(.7f)
 		);
+    	textures.put(RedGhost.class, new TextureRedGhost(world.getRedGhost(), .3f));
     }
 
 

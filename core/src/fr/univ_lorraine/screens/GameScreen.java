@@ -15,6 +15,7 @@ import fr.univ_lorraine.view.WorldRenderer;
 import fr.univ_lorraine.Input.MonEcouteur;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class GameScreen implements Screen {
 	final PacmanGame game;
@@ -45,6 +46,7 @@ public class GameScreen implements Screen {
 		GestureDetector gd;
 		gd = new GestureDetector(new MonEcouteur(this.world.getPacman()));
 		Gdx.input.setInputProcessor(gd);
+
 	}
 
 

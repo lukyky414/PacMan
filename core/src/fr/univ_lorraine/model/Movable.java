@@ -89,4 +89,8 @@ public abstract class Movable extends GameElement{
 					break;
 			}
 	}
+
+	public void setBloquant(int[] b){
+		bloquant = b;
+	}
 }

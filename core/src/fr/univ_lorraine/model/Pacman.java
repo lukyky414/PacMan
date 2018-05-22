@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 public class Pacman extends Movable {
 
 	private int nextDir;
+	private boolean isDead = false;
 
 	public Pacman(Vector2 pos, World world){
 		super(pos,world);
@@ -52,4 +53,6 @@ public class Pacman extends Movable {
 			this.setDirection(nextDir);
 
 	}
+
+	public boolean getDead(){return isDead;}
 }
