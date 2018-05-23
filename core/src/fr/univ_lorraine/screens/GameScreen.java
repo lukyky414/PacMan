@@ -28,7 +28,7 @@ public class GameScreen implements Screen {
 	private World world;
 	private WorldRenderer worldRenderer;
 
-	private float deltaT = 0.0f, frame = 0.03125f;
+	private float deltaT = 0.0f, frame = 0.3125f;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;

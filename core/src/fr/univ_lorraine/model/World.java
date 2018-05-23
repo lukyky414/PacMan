@@ -15,7 +15,7 @@ public class World implements Iterable<GameElement> {
 	public World(){
 		this.maze = new Maze(this);
 		this.pacman = new Pacman(new Vector2(14,7), this);
-		this.redGhost = new RedGhost(new Vector2(14, 17), this);
+		this.redGhost = new RedGhost(new Vector2(15, 19), this); //14,17
 		this.superPellet.add(new SuperPellet(new Vector2(1,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(26,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(1,28), this));

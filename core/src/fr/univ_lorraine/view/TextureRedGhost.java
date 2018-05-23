@@ -20,19 +20,19 @@ public class TextureRedGhost implements iTexturable {
         this.red = redG;
         textures = new Texture[]{
                 new Texture("images/ghost1.png"),
-                new Texture("images/ghostDead.png"),
-                new Texture("images/ghostEscaping.png")
+               new Texture("images/ghostDead.png"),
+               new Texture("images/ghostEscaping.png")
         };
 
     }
 
    public Texture getTexture(float delta){
-        this.deltaT +=delta;
         if(red.getDead())
             return textures[1];
-        else if(red.getEscaping())
+       else if(red.getEscaping())
             return textures[2];
-        else return textures[0];
+        else
+            return textures[0];
 
     }
 
