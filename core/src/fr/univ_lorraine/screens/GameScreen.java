@@ -14,9 +14,6 @@ import fr.univ_lorraine.view.TextureFactory;
 import fr.univ_lorraine.view.WorldRenderer;
 import fr.univ_lorraine.Input.MonEcouteur;
 
-import java.util.Arrays;
-import java.util.Random;
-
 public class GameScreen implements Screen {
 	final PacmanGame game;
 
@@ -28,7 +25,8 @@ public class GameScreen implements Screen {
 	private World world;
 	private WorldRenderer worldRenderer;
 
-	private float deltaT = 0.0f, frame = 0.3125f;
+	private float deltaT = 0.0f;
+	public final static float FRAME = 0.3125f;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;
@@ -66,8 +64,8 @@ public class GameScreen implements Screen {
 
 	private void move(float delta){
 		this.deltaT += delta;
-		while(deltaT > frame){
-			deltaT-=frame;
+		while(deltaT > FRAME){
+			deltaT-= FRAME;
 			this.worldRenderer.move();
 		}
 	}

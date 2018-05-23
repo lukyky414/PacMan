@@ -3,10 +3,11 @@ package fr.univ_lorraine.model;
 import fr.univ_lorraine.model.Movable;
 import fr.univ_lorraine.model.World;
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.model.Ghost;
 
 import java.util.Random;
 
-public class RedGhost extends Movable {
+public class RedGhost extends Ghost {
 
     Random rand = new Random(System.currentTimeMillis());
 
