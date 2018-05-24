@@ -16,37 +16,14 @@ public class Pacman extends Movable {
 	public void newDirection(int direction){this.nextDir = direction;}
 
 	@Override
-	public void changeDir(){
-		int nextx = (int) this.pos.x;
-		int nexty = (int) this.pos.y;
+	public void changeDir(int currX, int currY){
+		int nextX = getNextX(currX, nextDir);
+		int nextY = getNextY(currY, nextDir);
 		int type;
 		boolean change = true;
 
-		switch (nextDir) {
-			case UP:
-				nexty++;
-				if (nexty > this.world.getMaze().getHeight() - 1)
-					nexty = 0;
-				break;
-			case RIGHT:
-				nextx++;
-				if (nextx > this.world.getMaze().getWidth() - 1)
-					nextx = 0;
-				break;
-			case DOWN:
-				nexty--;
-				if (nexty < 0)
-					nexty = this.world.getMaze().getHeight() - 1;
-				break;
-			case LEFT:
-				nextx--;
-				if (nextx < 0)
-					nextx = this.world.getMaze().getWidth() - 1;
-				break;
-		}
-		type = this.world.getMaze().getMap(nextx, nexty);
-		for(int non : this.bloquant)
-			if(type == non)
+		type = this.world.getMaze().getMap(nextX, nextY);
+		if(type == 0 || type == 3)
 				change = false;
 
 		if(change)

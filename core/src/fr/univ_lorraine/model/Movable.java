@@ -5,13 +5,13 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.ArrayList;
 
 public abstract class Movable extends GameElement{
-	public final static int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3;
+	public final static int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3, NOTHING = 4;
 	public final static Vector2 vUP = 	 new Vector2(0f, 0.0625f);
 	public final static Vector2 vRIGHT = new Vector2(0.0625f, 0f);
 	public final static Vector2 vDOWN =  new Vector2(0f, -0.0625f);
 	public final static Vector2 vLEFT =  new Vector2(-0.0625f, 0f);
 	private int direction = RIGHT;
-	protected int[] bloquant = new int[]{0,3};
+	private boolean passThrougGate = false;
 
 
 	public int getdirection(){ return this.direction;}
@@ -21,44 +21,30 @@ public abstract class Movable extends GameElement{
 		super(pos,world);
 	}
 
-	abstract void changeDir();
+
+	abstract void changeDir(int currX, int currY);
 
 	@Override
 	public void move(){
-		int nextx = (int) this.pos.x;
-		int nexty = (int) this.pos.y;
-		int type;
+		int currX = (int) this.pos.x;
+		int currY = (int) this.pos.y;
 		boolean stop = false;
 
 		if(this.pos.x % 1 == 0 && this.pos.y % 1 == 0) {//position entiere:
-			changeDir();
-			switch (direction) {
-				case UP:
-					nexty++;
-					if(nexty > this.world.getMaze().getHeight()-1)
-						nexty = 0;
-					break;
-				case RIGHT:
-					nextx++;
-					if(nextx > this.world.getMaze().getWidth()-1)
-						nextx = 0;
-					break;
-				case DOWN:
-					nexty--;
-					if(nexty < 0)
-						nexty = this.world.getMaze().getHeight()-1;
-					break;
-				case LEFT:
-					nextx--;
-					if(nextx < 0)
-						nextx = this.world.getMaze().getWidth()-1;
-					break;
-			}
+			changeDir(currX, currY);
 
-			type = this.world.getMaze().getMap(nextx, nexty);
-			for(int non : this.bloquant)
-				if(type == non)
-					stop = true;
+			int nextx = getNextX(currX, this.getdirection());
+			int nexty = getNextY(currY, this.getdirection());
+
+			int type = this.world.getMaze().getMap(nextx, nexty);
+			if(type == 0)
+				stop = true;
+			if(this.direction == NOTHING)
+				stop = true;
+
+			int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
+			if(typeActuel != 3 && type == 3 && !passThrougGate)
+				stop = true;
 		}
 
 		if(!stop)
@@ -86,7 +72,39 @@ public abstract class Movable extends GameElement{
 			}
 	}
 
-	public void setBloquant(int[] b){
-		bloquant = b;
+	protected void imAGhost(){
+		passThrougGate = true;
+	}
+
+	protected int getNextX(int currX, int direction){
+		switch (direction) {
+			case RIGHT:
+				currX++;
+				if(currX > this.world.getMaze().getWidth()-1)
+					currX = 0;
+				break;
+			case LEFT:
+				currX--;
+				if(currX < 0)
+					currX = this.world.getMaze().getWidth()-1;
+				break;
+		}
+		return currX;
+	}
+
+	protected int getNextY(int currY, int direction){
+		switch (direction) {
+			case UP:
+				currY++;
+				if(currY > this.world.getMaze().getHeight()-1)
+					currY = 0;
+				break;
+			case DOWN:
+				currY--;
+				if(currY < 0)
+					currY = this.world.getMaze().getHeight()-1;
+				break;
+		}
+		return currY;
 	}
 }

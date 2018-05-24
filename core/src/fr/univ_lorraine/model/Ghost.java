@@ -15,38 +15,78 @@ public abstract class Ghost extends Movable {
 
     public Ghost(Vector2 pos, World world){
         super(pos, world);
+        super.imAGhost();
         SpawnPos = pos;
     }
 
     @Override
-    void changeDir(){
-        if(cooldown > 0)
-            this.cooldown -= GameScreen.FRAME;
+    void changeDir(int currX, int currY){
+		int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
+        if(cooldown > 0) {
+			this.cooldown -= GameScreen.FRAME;
+			this.setDirection(Movable.NOTHING);
+			/*Le cooldown ne s'effectue que lorsque l'on est sur une position reel
+			 * Une fois sur cette position, on ne bouge plus donc on reste sur une position reel
+			 * Cela s'execute donc bien a chaque GameScreen.FRAME*/
+		}
         else{
             if(etat == MORT)
-                this.cheminRetour();
-            else
-                /* recherche la prochaine direction si pos = 2 ou 3
-                aller vers un 3 seulement si on est dans un 3 ou si on et mort
-
-                Pas de chemin au spawn -> recherche du chemin comme si 3 &tait une intersection
-                La sortie de la prison est une intersection donc pas de probleme*/
-                this.setDirection(this.rechercheDir());
+                this.cheminRetour(currX, currY);
+            else {
+				if (typeActuel == 2 || typeActuel == 3)
+					this.setDirection(this.rechercheDir(currX, currY));
+				else
+					ContinueOnPath(currX, currY);
+			}
         }
     }
 
-    abstract int rechercheDir();
+    abstract int rechercheDir(int currX, int currY);
 
-    private void cheminRetour() {
+    private void cheminRetour(int currX, int currY) {
 
-        //Utiliser le plus court chemin avec inondation pour revenir à SpawnPos
+        //TODO Utiliser le plus court chemin avec inondation pour revenir à SpawnPos
+
     }
 
-    void ContinueOnPath(int nextX, int nextY){
-        //En fonction de la dir actuelle regarder la prochaine direction
-        // Si la prochaine dir impossible tester virage vers gauche puis droite
-        // Si g et d impossible demi-tour
+    private void ContinueOnPath(int currX, int currY){
+    	int nextX = getNextX(currX, getdirection());
+    	int nextY = getNextY(currY, getdirection());
+
+		int type = this.world.getMaze().getMap(nextX, nextY);
+		if(type == 0 || (type == 3 && this.etat != MORT)){
+			switch(this.getdirection()){
+				case UP:
+					if(!tryDir(currX+1, currY, RIGHT))
+						if(!tryDir(currX-1, currY, LEFT))
+							this.setDirection(DOWN);
+					break;
+				case RIGHT:
+					if(!tryDir(currX, currY+1, UP))
+						if(!tryDir(currX, currY-1, DOWN))
+							this.setDirection(LEFT);
+					break;
+				case DOWN:
+					if(!tryDir(currX+1, currY, RIGHT))
+						if(!tryDir(currX-1, currY, LEFT))
+							this.setDirection(UP);
+					break;
+				case LEFT:
+					if(!tryDir(currX, currY+1, UP))
+						if(!tryDir(currX, currY-1, DOWN))
+							this.setDirection(RIGHT);
+					break;
+			}
+		}
     }
+
+    private boolean tryDir(int nextX, int nextY, int direction){
+		int type = this.world.getMaze().getMap(nextX, nextY);
+		if(type == 0 || (type == 3 && this.etat != MORT))
+			return false;
+		this.setDirection(direction);
+		return true;
+	}
 
 	public int getEtat() {
     	return this.etat;
