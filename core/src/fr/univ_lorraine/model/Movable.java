@@ -20,10 +20,6 @@ public abstract class Movable extends GameElement{
 	public Movable(Vector2 pos, World world){
 		super(pos,world);
 	}
-	public Movable(Vector2 pos, World world, int[] bloquant){
-		super(pos,world);
-		this.bloquant = bloquant;
-	}
 
 	abstract void changeDir();
 

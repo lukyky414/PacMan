@@ -13,7 +13,7 @@ public class RedGhost extends Ghost {
 
 
     public RedGhost(Vector2 pos, World w){
-        super(pos, w, new int[]{0});
+        super(pos, w);
         setDirection(UP);
 
     }
@@ -25,6 +25,11 @@ public class RedGhost extends Ghost {
            setDirection(rand.nextInt(3) + 0);
 
     }
+
+	@Override
+	int rechercheDir() {
+		return 0;
+	}
 
     /* Changer direction : vérifier si on peut continuer dans la même direction
     Si non : vérifier à droite et à gauche. Commencer par gauche puis droite. Si gauche est possible prendre gauche

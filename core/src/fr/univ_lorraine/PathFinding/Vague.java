@@ -1,26 +1,28 @@
-package fr.univ_lorraine.model;
+package fr.univ_lorraine.PathFinding;
 
+import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.model.Maze;
 
 import java.util.Stack;
 
 public class Vague {
     Vague father;
     Maze maze;
-    Vector2 source, target;
+    GridPoint2 source, target;
 
-    public Vague(Vague father, Vector2 source, Vector2 target, Maze maze){
+    public Vague(Vague father, GridPoint2 source, GridPoint2 target, Maze maze){
         this.father = father;
         this.maze = maze;
         this.source = source;
         this.target = target;
     }
 
-    public Vague(Vector2 source, Vector2 target, Maze maze){
+    public Vague(GridPoint2 source, GridPoint2 target, Maze maze){
         this(null, source, target, maze);
     }
 
-    public Vector2 getPos(){return source;}
+    public GridPoint2 getPos(){return source;}
     public Vague getFather(){return father;}
 
     public boolean inonder(Stack<Vague> tsunami){

@@ -1,6 +1,7 @@
 package fr.univ_lorraine.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import fr.univ_lorraine.PacmanGame;
+import fr.univ_lorraine.model.Movable;
 import fr.univ_lorraine.model.World;
 import fr.univ_lorraine.view.TextureFactory;
 import fr.univ_lorraine.view.WorldRenderer;
@@ -26,7 +28,7 @@ public class GameScreen implements Screen {
 	private WorldRenderer worldRenderer;
 
 	private float deltaT = 0.0f;
-	public final static float FRAME = 0.3125f;
+	public final static float FRAME = 0.03125f;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;
@@ -52,6 +54,8 @@ public class GameScreen implements Screen {
 	public void render(float delta) {
 		this.move(delta);
 
+		this.KeyBoardListener();
+
 
 		camera.update();
 
@@ -60,6 +64,20 @@ public class GameScreen implements Screen {
 
 		batch.setProjectionMatrix(camera.combined);
 		this.worldRenderer.render(delta);
+	}
+
+	private void KeyBoardListener() {
+		if (Gdx.input.isKeyPressed(Input.Keys.LEFT))
+			this.world.getPacman().newDirection(Movable.LEFT);
+
+		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT))
+			this.world.getPacman().newDirection(Movable.RIGHT);
+
+		if (Gdx.input.isKeyPressed(Input.Keys.DOWN))
+			this.world.getPacman().newDirection(Movable.DOWN);
+
+		if (Gdx.input.isKeyPressed(Input.Keys.UP))
+			this.world.getPacman().newDirection(Movable.UP);
 	}
 
 	private void move(float delta){

@@ -5,12 +5,12 @@ import fr.univ_lorraine.model.Movable;
 import fr.univ_lorraine.screens.GameScreen;
 
 
-public class Ghost extends Movable {
+public abstract class Ghost extends Movable {
 
-    public final static int SPAWN = 0, POURSUITE = 1, FUITE = 2, MORT = 3;
+    public final static int POURSUITE = 0, FUITE = 1, MORT = 2;
     public final static float SPAWNCOOLDOWN = 3f; //ChangeDir s'execute toutes les GameScreen.FRAME ms
     private float cooldown = SPAWNCOOLDOWN;
-    int etat = SPAWN;
+    int etat = POURSUITE;
     Vector2 SpawnPos;
 
     public Ghost(Vector2 pos, World world){
@@ -48,4 +48,7 @@ public class Ghost extends Movable {
         // Si g et d impossible demi-tour
     }
 
+	public int getEtat() {
+    	return this.etat;
+	}
 }

@@ -26,14 +26,14 @@ public class TextureRedGhost implements iTexturable {
 
     }
 
-   public Texture getTexture(float delta){
-        if(red.getDead())
-            return textures[1];
-       else if(red.getEscaping())
-            return textures[2];
-        else
-            return textures[0];
-
-    }
+   public Texture getTexture(float delta) {
+	   /*if (red.getDead())
+		   return textures[1];
+	   else if (red.getEscaping())
+		   return textures[2];
+	   else
+		   return textures[0];//*/
+		return textures[red.getEtat()];
+   }
 
 }
