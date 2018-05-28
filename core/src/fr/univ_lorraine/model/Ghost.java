@@ -45,10 +45,15 @@ public abstract class Ghost extends Movable {
 
     private void cheminRetour(int currX, int currY) {
 
+
+
         //TODO Utiliser le plus court chemin avec inondation pour revenir à SpawnPos
 
     }
 
+
+    //Fait en sorte qu'un chemin unique soit parcouru jusqu'au bout
+	//et que le fantome ne s'arrête pas dès qu'il y a un angle
     private void ContinueOnPath(int currX, int currY){
     	int nextX = getNextX(currX, getdirection());
     	int nextY = getNextY(currY, getdirection());
@@ -80,6 +85,9 @@ public abstract class Ghost extends Movable {
 		}
     }
 
+    //Vérifie si la direction paramétrée est juste
+	//Si le fantome veut aller tout droit et qu'il est face à un mur, retourner faux pour
+	//Séléctionner une autre direction
     private boolean tryDir(int nextX, int nextY, int direction){
 		int type = this.world.getMaze().getMap(nextX, nextY);
 		if(type == 0 || (type == 3 && this.etat != MORT))

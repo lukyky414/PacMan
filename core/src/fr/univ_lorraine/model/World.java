@@ -10,12 +10,14 @@ public class World implements Iterable<GameElement> {
 	private Pacman pacman;
 	private ArrayList<SuperPellet> superPellet = new ArrayList<SuperPellet>();
 	private RedGhost redGhost;
+	private PinkGhost pinkGhost;
 	private Maze maze;
 
 	public World(){
 		this.maze = new Maze(this);
 		this.pacman = new Pacman(new Vector2(14,7), this);
-		this.redGhost = new RedGhost(new Vector2(15, 19), this); //14,17
+		this.redGhost = new RedGhost(new Vector2(14, 17), this);
+		this.pinkGhost = new PinkGhost(new Vector2(12, 17), this);
 		this.superPellet.add(new SuperPellet(new Vector2(1,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(26,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(1,28), this));
@@ -29,6 +31,7 @@ public class World implements Iterable<GameElement> {
 	public Pacman getPacman(){return pacman;}
 	public ArrayList<SuperPellet> getSuperPellet(){return superPellet;}
 	public RedGhost getRedGhost(){return redGhost;}
+	public PinkGhost getPinkGhost(){return pinkGhost;}
 
 	@Override
 	public Iterator<GameElement> iterator(){

@@ -52,6 +52,10 @@ public class WorldIterator implements Iterator<GameElement> {
 				i++;
 				return this.world.getRedGhost();
 
+			case 4:
+				i++;
+				return this.world.getPinkGhost();
+
 			default:
 				throw new NoSuchElementException("No more element in this collection.");
 		}
