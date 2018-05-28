@@ -82,6 +82,7 @@ public class Maze implements Iterable<GameElement>{
 	}
 
 	public GameElement get(int i, int j){ return this.laby2[j][i];}
+	public void delete(int i, int j)	{ laby2[j][i] = null;}
 	public int getMap(int i, int j)		{ return this.laby1[j][i];}
 
 }

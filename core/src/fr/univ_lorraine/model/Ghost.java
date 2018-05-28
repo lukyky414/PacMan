@@ -1,22 +1,24 @@
 package fr.univ_lorraine.model;
 
 import com.badlogic.gdx.math.Vector2;
-import fr.univ_lorraine.model.Movable;
 import fr.univ_lorraine.screens.GameScreen;
+
+import java.util.Random;
 
 
 public abstract class Ghost extends Movable {
+	Random rand = new Random(System.currentTimeMillis());
 
     public final static int POURSUITE = 0, FUITE = 1, MORT = 2;
     public final static float SPAWNCOOLDOWN = 3f; //ChangeDir s'execute toutes les GameScreen.FRAME ms
-    private float cooldown = SPAWNCOOLDOWN;
-    int etat = POURSUITE;
+    private float cooldown;
+    int etat;
     Vector2 SpawnPos;
 
     public Ghost(Vector2 pos, World world){
         super(pos, world);
-        super.imAGhost();
         SpawnPos = pos;
+        this.resurect();
     }
 
     @Override
@@ -34,14 +36,18 @@ public abstract class Ghost extends Movable {
                 this.cheminRetour(currX, currY);
             else {
 				if (typeActuel == 2 || typeActuel == 3)
-					this.setDirection(this.rechercheDir(currX, currY));
+					this.rechercheDir(currX, currY);
 				else
 					ContinueOnPath(currX, currY);
 			}
         }
     }
 
-    abstract int rechercheDir(int currX, int currY);
+    protected void aleaDir(int currX, int currY){
+    	while(!tryDir(currX, currY, rand.nextInt(4))){}
+	}
+
+    abstract void rechercheDir(int currX, int currY);
 
     private void cheminRetour(int currX, int currY) {
 
@@ -50,6 +56,21 @@ public abstract class Ghost extends Movable {
         //TODO Utiliser le plus court chemin avec inondation pour revenir à SpawnPos
 
     }
+
+    public void kill(){
+    	super.imADeadGhost();
+    	this.etat = MORT;
+	}
+
+	public void resurect(){
+    	super.imALivingGhost();
+    	this.etat=POURSUITE;
+    	this.cooldown=SPAWNCOOLDOWN;
+	}
+
+	public void fear(){
+    	this.etat = FUITE;
+	}
 
 
     //Fait en sorte qu'un chemin unique soit parcouru jusqu'au bout
@@ -88,10 +109,21 @@ public abstract class Ghost extends Movable {
     //Vérifie si la direction paramétrée est juste
 	//Si le fantome veut aller tout droit et qu'il est face à un mur, retourner faux pour
 	//Séléctionner une autre direction
-    private boolean tryDir(int nextX, int nextY, int direction){
-		int type = this.world.getMaze().getMap(nextX, nextY);
-		if(type == 0 || (type == 3 && this.etat != MORT))
+    protected boolean tryDir(int currX, int currY, int direction){
+		int nextx = getNextX(currX, direction);
+		int nexty = getNextY(currY, direction);
+
+		int type = this.world.getMaze().getMap(nextx, nexty);
+		if(type == 0)
 			return false;
+
+		if(direction == NOTHING)
+			return false;
+
+		int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
+		if(type == 3 && typeActuel != 3 && etat != MORT)
+			return false;
+
 		this.setDirection(direction);
 		return true;
 	}

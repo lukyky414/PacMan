@@ -1,8 +1,6 @@
 package fr.univ_lorraine.view;
 
 import com.badlogic.gdx.graphics.Texture;
-import fr.univ_lorraine.model.Pacman;
-import fr.univ_lorraine.model.SuperPellet;
 
 public class TextureSuperPellet implements iTexturable {
 	private float deltaT = 0.0f, seuil;

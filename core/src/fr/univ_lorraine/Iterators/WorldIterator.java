@@ -12,7 +12,7 @@ public class WorldIterator implements Iterator<GameElement> {
 	private Iterator<GameElement> mazeIterator;
 	private Iterator<SuperPellet> superPelletIterator;
 	private int i;
-	private final static int MAX = 4;
+	private final static int MAX = 7;
 
 	public WorldIterator(World world){
 		this.world = world;
@@ -55,6 +55,14 @@ public class WorldIterator implements Iterator<GameElement> {
 			case 4:
 				i++;
 				return this.world.getPinkGhost();
+
+			case 5:
+				i++;
+				return this.world.getBlueGhost();
+
+			case 6:
+				i++;
+				return this.world.getYellowGhost();
 
 			default:
 				throw new NoSuchElementException("No more element in this collection.");

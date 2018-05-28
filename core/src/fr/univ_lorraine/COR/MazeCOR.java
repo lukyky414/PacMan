@@ -1,9 +1,6 @@
 package fr.univ_lorraine.COR;
 
 
-import com.badlogic.gdx.math.Vector2;
-import fr.univ_lorraine.model.*;
-
 public class MazeCOR {
 	private static MazeCOR instance = new MazeCOR();
 

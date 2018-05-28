@@ -9,12 +9,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import fr.univ_lorraine.Input.MonEcouteur;
 import fr.univ_lorraine.PacmanGame;
-import fr.univ_lorraine.model.Movable;
-import fr.univ_lorraine.model.World;
+import fr.univ_lorraine.model.*;
 import fr.univ_lorraine.view.TextureFactory;
 import fr.univ_lorraine.view.WorldRenderer;
-import fr.univ_lorraine.Input.MonEcouteur;
 
 public class GameScreen implements Screen {
 	final PacmanGame game;
@@ -30,22 +29,15 @@ public class GameScreen implements Screen {
 	private float deltaT = 0.0f;
 	public final static float FRAME = 0.03125f;
 
+	private	GestureDetector gd;
+
+	public static int score;
+
 	public GameScreen(PacmanGame game) {
 		this.game = game;
-		this.world = new World();
+		//this.show() est executé automatiquement.
 
-		this.batch = new SpriteBatch();
-		this.camera = new OrthographicCamera();
-		this.viewport = new StretchViewport(this.world.getWidth() * 16,
-				this.world.getHeight()*16,
-				camera);
-		this.viewport.apply();
 
-		this.worldRenderer = new WorldRenderer(this.world, this.batch);
-
-		GestureDetector gd;
-		gd = new GestureDetector(new MonEcouteur(this.world.getPacman()));
-		Gdx.input.setInputProcessor(gd);
 
 	}
 
@@ -85,6 +77,25 @@ public class GameScreen implements Screen {
 		while(deltaT > FRAME){
 			deltaT-= FRAME;
 			this.worldRenderer.move();
+			this.postMove();
+		}
+	}
+
+	private void postMove(){
+		//Test pour les pellets
+		int pacX = (int) (world.getPacman().getPosition().x + .5f);
+		int pacY = (int) (world.getPacman().getPosition().y + .5f);
+
+		GameElement element = world.getMaze().get(pacX,pacY);
+		if(element != null && element.getClass() == Pellet.class){
+			score += 1;
+			world.getMaze().delete(pacX, pacY);
+		}
+
+
+		if(element != null && element.getClass() == SuperPellet.class){
+
+			world.getMaze().delete(pacX, pacY);
 		}
 	}
 
@@ -102,10 +113,27 @@ public class GameScreen implements Screen {
 	public World getWorld() { return this.world; }
 
 	@Override
-	public void show() { TextureFactory.reset(this.world); }
+	public void show() {
+		this.world = new World();
+
+		this.batch = new SpriteBatch();
+		this.camera = new OrthographicCamera();
+		this.viewport = new StretchViewport(this.world.getWidth() * 16,
+				this.world.getHeight()*16,
+				camera);
+		this.viewport.apply();
+
+		this.worldRenderer = new WorldRenderer(this.world, this.batch);
+
+		TextureFactory.reset(this.world);
+
+		score = 0;
+		gd = new GestureDetector(new MonEcouteur(this.world.getPacman()));
+		Gdx.input.setInputProcessor(gd);
+	}
 
 	@Override
-	public void hide() {}
+	public void hide() { }
 
 	@Override
 	public void pause() {}

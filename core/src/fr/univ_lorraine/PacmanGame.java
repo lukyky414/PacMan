@@ -2,7 +2,6 @@ package fr.univ_lorraine;
 
 import com.badlogic.gdx.Game;
 import fr.univ_lorraine.screens.GameScreen;
-import fr.univ_lorraine.screens.MainMenuScreen;
 
 public class PacmanGame extends Game {
 

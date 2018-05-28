@@ -20,18 +20,36 @@ public class TextureFactory {
 				Pellet.class,
 				new TextureUnique("images/pellet.png")
 		);
+		textures.put(
+				SuperPellet.class,
+				new TextureSuperPellet(.7f)
+		);
 
+		//Pacman
     	textures.put(
     			Pacman.class,
 				new TexturePacman(world.getPacman(), .3f)
 		);
-    	textures.put(
-    			SuperPellet.class,
-				new TextureSuperPellet(.7f)
-		);
+
+    	//redGhost
     	textures.put(
     			RedGhost.class,
-				new TextureUnique("images/ghost1.png")
+				new TextureRedGhost(world.getRedGhost())
+		);
+		//pinkGhost
+		textures.put(
+				PinkGhost.class,
+				new TexturePinkGhost(world.getPinkGhost())
+		);
+		//blueGhost
+		textures.put(
+				BlueGhost.class,
+				new TextureBlueGhost(world.getBlueGhost())
+		);
+		//yellowGhost
+		textures.put(
+				YellowGhost.class,
+				new TextureYellowGhost(world.getYellowGhost())
 		);
     }
 

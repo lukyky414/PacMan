@@ -2,8 +2,6 @@ package fr.univ_lorraine.model;
 
 import com.badlogic.gdx.math.Vector2;
 
-import java.util.ArrayList;
-
 public abstract class Movable extends GameElement{
 	public final static int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3, NOTHING = 4;
 	public final static Vector2 vUP = 	 new Vector2(0f, 0.0625f);
@@ -43,7 +41,7 @@ public abstract class Movable extends GameElement{
 				stop = true;
 
 			int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
-			if(typeActuel != 3 && type == 3 && !passThrougGate)
+			if(type == 3 && typeActuel != 3 && !passThrougGate)
 				stop = true;
 		}
 
@@ -72,8 +70,11 @@ public abstract class Movable extends GameElement{
 			}
 	}
 
-	protected void imAGhost(){
+	protected void imADeadGhost(){
 		passThrougGate = true;
+	}
+	protected void imALivingGhost(){
+		passThrougGate = false;
 	}
 
 	protected int getNextX(int currX, int direction){

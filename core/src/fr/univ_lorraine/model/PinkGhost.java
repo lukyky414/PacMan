@@ -1,11 +1,8 @@
 package fr.univ_lorraine.model;
 
 import com.badlogic.gdx.math.Vector2;
-import fr.univ_lorraine.model.Ghost;
 
-import java.lang.annotation.Documented;
 import java.util.Random;
-import java.util.Vector;
 
 public class PinkGhost extends Ghost{
 
@@ -15,34 +12,32 @@ public class PinkGhost extends Ghost{
     }
 
     @Override
-    int rechercheDir(int currX, int currY){
+    void rechercheDir(int currX, int currY){
+    	int pacX = (int) world.getPacman().getPosition().x;
+		int pacY = (int) world.getPacman().getPosition().y;
 
-        /* est ce que le x est celui du pacmn (pas)
-        test si le x du pacman est < à x onn tente à gauche
-        else on tente à droite
+    	//se rapprocher en X
+		if(currX > pacX)
+			if(this.tryDir(currX, currY, LEFT)) return;
 
-         si y est celui du pacman (pas)
-         test si le y du pacman est > à y on tente en haut
-         sinon on tente en bas
+		if(currX < pacX)
+			if(this.tryDir(currX, currY, RIGHT)) return;
 
-         sinon aléatoire
 
-         */
+        //se rapprocher en Y
+		if(currY > pacY)
+			if(this.tryDir(currX, currY, DOWN)) return;
 
-        Random rand = new Random(System.currentTimeMillis());
+		if(currY < pacY)
+			if(this.tryDir(currX, currY, UP)) return;
 
-        if(currX == world.getPacman().getPosition().x){
-            if(currX > world.getPacman().getPosition().x)
-                return LEFT;
-            else return RIGHT;
-        }
-        else if (currY == world.getPacman().getPosition().y){
-            if(currY < world.getPacman().getPosition().y)
-                return UP;
-            else return DOWN;
-        }
-        else return rand.nextInt(3) + 0;
 
+		//continuer dans la meme dir pour eviter les demi tour inutile
+		if(this.tryDir(currX, currY, this.getdirection()))return;
+
+
+		//rien ne fonctionne
+		this.aleaDir(currX, currY);
     }
 
 
