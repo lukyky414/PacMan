@@ -3,16 +3,15 @@ package fr.univ_lorraine.view;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import fr.univ_lorraine.model.GameElement;
 import fr.univ_lorraine.model.World;
+import fr.univ_lorraine.screens.GameScreen;
 
 public class WorldRenderer {
 	private World world;
 	private SpriteBatch batch;
-	public float ppuX, ppuY;
 
 
 	public WorldRenderer(World world, SpriteBatch batch){
 		this.world = world;
-		ppuX = ppuY = 16;
 		this.batch = batch;
 	}
 
@@ -23,10 +22,10 @@ public class WorldRenderer {
 		for (GameElement element : this.world)
 			this.batch.draw(
 					TextureFactory.getInstance().getTexture(element.getClass(), delta),
-					element.getPosition().x * ppuX,
-					element.getPosition().y * ppuY,
-					element.getSize().x *ppuX,
-					element.getSize().y * ppuY);
+					element.getPosition().x * GameScreen.PPUX,
+					element.getPosition().y * GameScreen.PPUY,
+					element.getSize().x * GameScreen.PPUX,
+					element.getSize().y * GameScreen.PPUY);
 
 		this.batch.end();
 	}

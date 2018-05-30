@@ -7,8 +7,8 @@ import fr.univ_lorraine.PacmanGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.width = 448;
-		config.height = 496;
+		/*config.width = 448;
+		config.height = 496;//*/
 
 		new LwjglApplication(new PacmanGame(), config);
 	}

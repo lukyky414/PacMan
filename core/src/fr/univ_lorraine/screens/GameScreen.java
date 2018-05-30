@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
@@ -28,15 +29,20 @@ public class GameScreen implements Screen {
 
 	private float deltaT = 0.0f;
 	public final static float FRAME = 0.03125f;
+	public final static int PPUX = 16, PPUY = 16;
 
 	private	GestureDetector gd;
 
-	public static int score;
+	private BitmapFont font;
+
+	public int score;
+	public static int lives = 3;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;
 		//this.show() est executé automatiquement.
 
+		font = new BitmapFont();
 
 
 	}
@@ -53,6 +59,13 @@ public class GameScreen implements Screen {
 
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+
+		batch.begin();
+		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUX) - 3 );
+		batch.end();
+
+
 
 		batch.setProjectionMatrix(camera.combined);
 		this.worldRenderer.render(delta);
@@ -95,10 +108,9 @@ public class GameScreen implements Screen {
 
 		for(int x= 0; x < world.getSuperPellet().size(); x++){
 			SuperPellet p = world.getSuperPellet().get(x);
-			if(pacX == p.getPosition().x && pacY == p.getPosition().y)
-				world.getSuperPellet().remove(p);
+			if(p.getPosition().equals(this.world.getPacman().getPosition()))
+				world.getSuperPellet().remove(x);
 		}
-
 	}
 
 
@@ -118,10 +130,14 @@ public class GameScreen implements Screen {
 	public void show() {
 		this.world = new World();
 
+		Gdx.graphics.setDisplayMode(this.world.getWidth() * PPUX,
+				(this.world.getHeight() + 1)*PPUY,
+				false);
+
 		this.batch = new SpriteBatch();
 		this.camera = new OrthographicCamera();
-		this.viewport = new StretchViewport(this.world.getWidth() * 16,
-				this.world.getHeight()*16,
+		this.viewport = new StretchViewport(this.world.getWidth() * PPUX,
+				(this.world.getHeight() + 1)*PPUY,
 				camera);
 		this.viewport.apply();
 
