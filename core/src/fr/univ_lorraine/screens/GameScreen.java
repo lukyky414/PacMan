@@ -93,10 +93,12 @@ public class GameScreen implements Screen {
 		}
 
 
-		if(element != null && element.getClass() == SuperPellet.class){
-
-			world.getMaze().delete(pacX, pacY);
+		for(int x= 0; x < world.getSuperPellet().size(); x++){
+			SuperPellet p = world.getSuperPellet().get(x);
+			if(pacX == p.getPosition().x && pacY == p.getPosition().y)
+				world.getSuperPellet().remove(p);
 		}
+
 	}
 
 
