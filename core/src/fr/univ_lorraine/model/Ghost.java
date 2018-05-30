@@ -11,13 +11,15 @@ public abstract class Ghost extends Movable {
 
     public final static int POURSUITE = 0, FUITE = 1, MORT = 2;
     public final static float SPAWNCOOLDOWN = 3f; //ChangeDir s'execute toutes les GameScreen.FRAME ms
+	public final static float FEARCOOLDOWN = 15f;
+	private float fearCooldown;
     private float cooldown;
     int etat;
     Vector2 SpawnPos;
 
     public Ghost(Vector2 pos, World world){
         super(pos, world);
-        SpawnPos = pos;
+        SpawnPos = new Vector2(pos);
         this.resurect();
     }
 
@@ -32,13 +34,30 @@ public abstract class Ghost extends Movable {
 			 * Cela s'execute donc bien a chaque GameScreen.FRAME*/
 		}
         else{
-            if(etat == MORT)
-                this.cheminRetour(currX, currY);
-            else {
-				if (typeActuel == 2 || typeActuel == 3)
-					this.rechercheDir(currX, currY);
-				else
-					ContinueOnPath(currX, currY);
+        	switch(etat){
+				case MORT:
+					this.cheminRetour(currX, currY);
+
+					break;
+
+				case FUITE:
+					if(fearCooldown > 0){
+						this.fearCooldown -= GameScreen.FRAME;
+						this.rechercheFuiteDit(currX, currY);
+						break;
+					}
+					else{
+						this.etat = POURSUITE;
+					}
+
+
+				case POURSUITE:
+					if (typeActuel == 2 || typeActuel == 3)
+						this.rechercheDir(currX, currY);
+					else
+						ContinueOnPath(currX, currY);
+
+					break;
 			}
         }
     }
@@ -48,6 +67,7 @@ public abstract class Ghost extends Movable {
 	}
 
     abstract void rechercheDir(int currX, int currY);
+    abstract void rechercheFuiteDit(int currX, int currY);
 
     private void cheminRetour(int currX, int currY) {
 
@@ -66,6 +86,7 @@ public abstract class Ghost extends Movable {
     	super.imALivingGhost();
     	this.etat=POURSUITE;
     	this.cooldown=SPAWNCOOLDOWN;
+    	this.fearCooldown=0;
 	}
 
 	public void fear(){
@@ -130,5 +151,9 @@ public abstract class Ghost extends Movable {
 
 	public int getEtat() {
     	return this.etat;
+	}
+
+	public void afterReset(){
+		this.resurect();
 	}
 }

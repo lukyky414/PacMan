@@ -37,6 +37,8 @@ public class World implements Iterable<GameElement> {
 
 	public Pacman getPacman(){return pacman;}
 	public ArrayList<SuperPellet> getSuperPellet(){return superPellet;}
+	public ArrayList<Ghost> getGhost(){return ghosts;}
+
 	public RedGhost getRedGhost(){return (RedGhost) ghosts.get(0);}
 	public PinkGhost getPinkGhost(){return (PinkGhost) ghosts.get(1);}
 	public BlueGhost getBlueGhost(){return (BlueGhost) ghosts.get(2);}

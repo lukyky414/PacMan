@@ -10,6 +10,7 @@ public abstract class Movable extends GameElement{
 	public final static Vector2 vLEFT =  new Vector2(-0.0625f, 0f);
 	private int direction = RIGHT;
 	private boolean passThrougGate = false;
+	private Vector2 SpawnPos;
 
 
 	public int getdirection(){ return this.direction;}
@@ -17,10 +18,17 @@ public abstract class Movable extends GameElement{
 
 	public Movable(Vector2 pos, World world){
 		super(pos,world);
+		SpawnPos = new Vector2(pos);
 	}
 
 
 	abstract void changeDir(int currX, int currY);
+	public abstract void afterReset();
+
+	public void reset(){
+		this.pos = new Vector2(SpawnPos);
+		this.afterReset();
+	}
 
 	@Override
 	public void move(){
