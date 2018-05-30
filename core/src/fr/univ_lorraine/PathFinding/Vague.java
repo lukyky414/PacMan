@@ -49,7 +49,15 @@ public class Vague {
 
         //!\\Les cases vides autour -> ne pas rechercher en dehors du tableau
         //Si ça dépasse la taille, revenir au début (tp de gauche à droite et inversement, ainsi que haut bas)
-      if()
+        if(source.x < 0)
+            source.x = maze.getWidth()-1;
+        if(source.x > maze.getWidth())
+            source.x = 0;
+        if (source.y > maze.getHeight())
+            source.y = 0;
+        if (source.y < 0)
+            source.y = maze.getHeight()-1;
+
 
 
         return false;
