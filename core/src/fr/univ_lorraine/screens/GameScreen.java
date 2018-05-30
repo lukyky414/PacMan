@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
@@ -31,12 +32,14 @@ public class GameScreen implements Screen {
 	public final static float FRAME = 0.03125f;
 	public final static int PPUX = 16, PPUY = 16;
 
+	private Texture live;
+
 	private	GestureDetector gd;
 
 	private BitmapFont font;
 
 	public int score;
-	public static int lives = 3;
+	public int lives = 3;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;
@@ -44,7 +47,7 @@ public class GameScreen implements Screen {
 
 		font = new BitmapFont();
 
-
+		live = new Texture("images/pacmanRight-2.png");
 	}
 
 
@@ -62,10 +65,17 @@ public class GameScreen implements Screen {
 
 
 		batch.begin();
-		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUX) - 3 );
+		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUY)-3);
+
+		for(int x = 0; x < lives; x++){
+			batch.draw(live,
+					(this.world.getWidth() - x - 1) * GameScreen.PPUX,
+					(this.world.getHeight()) * GameScreen.PPUY,
+					PPUX,
+					PPUY);
+		}
+
 		batch.end();
-
-
 
 		batch.setProjectionMatrix(camera.combined);
 		this.worldRenderer.render(delta);
@@ -99,6 +109,8 @@ public class GameScreen implements Screen {
 		int pacX = (int) (world.getPacman().getPosition().x + .5f);
 		int pacY = (int) (world.getPacman().getPosition().y + .5f);
 
+		int ghX, ghY ;
+
 		GameElement element = world.getMaze().get(pacX,pacY);
 		if(element != null && element.getClass() == Pellet.class){
 			score += 1;
@@ -111,6 +123,32 @@ public class GameScreen implements Screen {
 			if(p.getPosition().equals(this.world.getPacman().getPosition()))
 				world.getSuperPellet().remove(x);
 		}
+
+		for(Ghost fantome : this.world.getGhost()){
+			ghX = (int) (fantome.getPosition().x + .5f);
+			ghY = (int) (fantome.getPosition().y + .5f);
+
+			if(pacX == ghX && pacY == ghY) {
+				switch (fantome.getEtat()){
+					case Ghost.POURSUITE:
+						this.death();
+						break;
+					case Ghost.FUITE:
+						fantome.kill();
+						break;
+				}
+			}
+		}
+	}
+
+	private void death(){
+		this.lives--;
+
+		for(Ghost fantome : this.world.getGhost()){
+			fantome.reset();
+		}
+
+		this.world.getPacman().reset();
 	}
 
 
@@ -130,13 +168,15 @@ public class GameScreen implements Screen {
 	public void show() {
 		this.world = new World();
 
-		Gdx.graphics.setDisplayMode(this.world.getWidth() * PPUX,
+		Gdx.graphics.setDisplayMode(
+				this.world.getWidth() * PPUX,
 				(this.world.getHeight() + 1)*PPUY,
 				false);
 
 		this.batch = new SpriteBatch();
 		this.camera = new OrthographicCamera();
-		this.viewport = new StretchViewport(this.world.getWidth() * PPUX,
+		this.viewport = new StretchViewport(
+				this.world.getWidth() * PPUX,
 				(this.world.getHeight() + 1)*PPUY,
 				camera);
 		this.viewport.apply();

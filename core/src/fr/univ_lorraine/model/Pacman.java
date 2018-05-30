@@ -29,4 +29,11 @@ public class Pacman extends Movable {
 			this.setDirection(nextDir);
 
 	}
+
+	@Override
+	public void afterReset() {
+		nextDir = RIGHT;
+	}
+
+
 }

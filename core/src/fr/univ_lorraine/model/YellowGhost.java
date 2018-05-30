@@ -16,4 +16,9 @@ public class YellowGhost extends Ghost {
 	void rechercheDir(int currX, int currY) {
 		this.aleaDir(currX, currY);
 	}
+
+	@Override
+	void rechercheFuiteDit(int currX, int currY) {
+		this.aleaDir(currX, currY);
+	}
 }

@@ -1,6 +1,7 @@
 package fr.univ_lorraine.Iterators;
 
 import fr.univ_lorraine.model.GameElement;
+import fr.univ_lorraine.model.Ghost;
 import fr.univ_lorraine.model.SuperPellet;
 import fr.univ_lorraine.model.World;
 
@@ -11,6 +12,7 @@ public class WorldIterator implements Iterator<GameElement> {
 	private World world;
 	private Iterator<GameElement> mazeIterator;
 	private Iterator<SuperPellet> superPelletIterator;
+	private Iterator<Ghost> ghostIterator;
 	private int i;
 	private final static int MAX = 7;
 
@@ -18,6 +20,7 @@ public class WorldIterator implements Iterator<GameElement> {
 		this.world = world;
 		this.mazeIterator = this.world.getMaze().iterator();
 		this.superPelletIterator = this.world.getSuperPellet().iterator();
+		this.ghostIterator = this.world.getGhost().iterator();
 		this.i = 0;
 	}
 
@@ -48,7 +51,7 @@ public class WorldIterator implements Iterator<GameElement> {
 				i++;
 				return this.world.getPacman();
 
-			case 3 :
+			case 3 : //Ghosts
 				i++;
 				return this.world.getRedGhost();
 
