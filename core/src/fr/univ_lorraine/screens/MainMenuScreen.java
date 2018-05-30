@@ -9,6 +9,7 @@ import fr.univ_lorraine.PacmanGame;
 
 public class MainMenuScreen implements Screen {
 	final PacmanGame game;
+	private boolean isTouched = true;
 
 	public MainMenuScreen(PacmanGame game) {
 		this.game = game;
@@ -28,8 +29,12 @@ public class MainMenuScreen implements Screen {
 		batch.end();
 
 		if (Gdx.input.isTouched()) {
-			game.setScreen(new GameScreen(game));
-			dispose();
+			if(!isTouched) {
+				game.setScreen(new GameScreen(game));
+				dispose();
+			}
+		}else {
+			isTouched = false;
 		}
 
 
