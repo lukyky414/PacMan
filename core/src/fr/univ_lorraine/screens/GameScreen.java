@@ -3,6 +3,7 @@ package fr.univ_lorraine.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -33,6 +34,8 @@ public class GameScreen implements Screen {
 	public final static int PPUX = 16, PPUY = 16;
 
 	private Texture live;
+	private Texture died;
+	private Texture title;
 
 	private	GestureDetector gd;
 
@@ -41,6 +44,8 @@ public class GameScreen implements Screen {
 	public int score;
 	public int lives = 3;
 
+
+
 	public GameScreen(PacmanGame game) {
 		this.game = game;
 		//this.show() est executé automatiquement.
@@ -48,26 +53,35 @@ public class GameScreen implements Screen {
 		font = new BitmapFont();
 
 		live = new Texture("images/pacmanRight-2.png");
+		died = new Texture("images/death.png");
+		title = new Texture("images/title.png");
 	}
 
 
 	@Override
 	public void render(float delta) {
-		this.move(delta);
+		camera.update();
+		Gdx.gl.glClearColor(0, 0, 0, 0);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		Color c = batch.getColor();
+		batch.setColor(c.r, c.g, c.b, 1f); //set alpha to 1
+
+		if(lives > 0)
+			this.move(delta);
 
 		this.KeyBoardListener();
 
 
-		camera.update();
-
-		Gdx.gl.glClearColor(0, 0, 0, 0);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-
 		batch.begin();
-		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUY)-3);
+		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUY) - 3);
+		int titleSizeY = PPUY;
+		int titleSizeX = (title.getWidth() * PPUY) / title.getHeight(); //Pour garder les proportions;
+		int titlePosY = this.world.getHeight() * PPUY;
+		int titlePosX = (this.world.getWidth() / 2) * PPUY - (titleSizeX / 2);
 
-		for(int x = 0; x < lives; x++){
+		batch.draw(title,titlePosX, titlePosY, titleSizeX, titleSizeY);
+
+		for (int x = 0; x < lives; x++) {
 			batch.draw(live,
 					(this.world.getWidth() - x - 1) * GameScreen.PPUX,
 					(this.world.getHeight()) * GameScreen.PPUY,
@@ -79,6 +93,22 @@ public class GameScreen implements Screen {
 
 		batch.setProjectionMatrix(camera.combined);
 		this.worldRenderer.render(delta);
+		if(this.lives == 0) {
+			batch.begin();
+
+
+			batch.draw(died,
+					0,
+					0,
+					this.world.getWidth() * PPUX,
+					this.world.getHeight() * PPUY);
+
+			batch.end();
+			if (Gdx.input.isTouched()) {
+				game.setScreen(new MainMenuScreen(game));
+				dispose();
+			}
+		}
 	}
 
 	private void KeyBoardListener() {

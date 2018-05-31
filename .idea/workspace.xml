@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c3c12a-6b2e-4869-b873-cf986904bebb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost4.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostDead.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostDead.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostEscaping.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostEscaping.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacman-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacman-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pellet.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pellet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -36,11 +48,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="139" column="13" lean-forward="true" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuScreen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -805,11 +826,14 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/DeathScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" />
       </list>
     </option>
   </component>
@@ -872,49 +896,12 @@
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
-              <item name="Iterators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
               <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="desktop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1043,14 +1030,14 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3297491" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3297491" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" weight="0.3297491" />
@@ -1093,24 +1080,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Vague.java" />
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Inondation.java" />
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java">
@@ -1253,16 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#299#300#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.6.1/86cad6bee68d4ebfca20baf70b44583e959fc395/gdx-backend-lwjgl-1.6.1-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -1323,13 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="22" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1405,10 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1440,10 +1392,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/fr/univ_lorraine/desktop/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/DeathScreen.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="139" column="13" lean-forward="true" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
         </state>
       </provider>
     </entry>
