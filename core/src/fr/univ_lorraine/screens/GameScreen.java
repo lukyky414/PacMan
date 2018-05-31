@@ -35,6 +35,7 @@ public class GameScreen implements Screen {
 
 	private Texture live;
 	private Texture died;
+	private Texture title;
 
 	private	GestureDetector gd;
 
@@ -53,6 +54,7 @@ public class GameScreen implements Screen {
 
 		live = new Texture("images/pacmanRight-2.png");
 		died = new Texture("images/death.png");
+		title = new Texture("images/title.png");
 	}
 
 
@@ -61,6 +63,8 @@ public class GameScreen implements Screen {
 		camera.update();
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		Color c = batch.getColor();
+		batch.setColor(c.r, c.g, c.b, 1f); //set alpha to 1
 
 		if(lives > 0)
 			this.move(delta);
@@ -70,6 +74,12 @@ public class GameScreen implements Screen {
 
 		batch.begin();
 		font.draw(batch, "Score: " + this.score, 4, ((this.world.getHeight() + 1) * PPUY) - 3);
+		int titleSizeY = PPUY;
+		int titleSizeX = (title.getWidth() * PPUY) / title.getHeight(); //Pour garder les proportions;
+		int titlePosY = this.world.getHeight() * PPUY;
+		int titlePosX = (this.world.getWidth() / 2) * PPUY - (titleSizeX / 2);
+
+		batch.draw(title,titlePosX, titlePosY, titleSizeX, titleSizeY);
 
 		for (int x = 0; x < lives; x++) {
 			batch.draw(live,
@@ -86,8 +96,6 @@ public class GameScreen implements Screen {
 		if(this.lives == 0) {
 			batch.begin();
 
-			Color c = batch.getColor();
-			batch.setColor(c.r, c.g, c.b, 1f); //set alpha to 1
 
 			batch.draw(died,
 					0,

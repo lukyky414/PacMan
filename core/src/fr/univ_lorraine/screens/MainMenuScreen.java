@@ -3,29 +3,66 @@ package fr.univ_lorraine.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
+import fr.univ_lorraine.Input.MonEcouteur;
 import fr.univ_lorraine.PacmanGame;
+import fr.univ_lorraine.model.World;
+import fr.univ_lorraine.view.TextureFactory;
+import fr.univ_lorraine.view.WorldRenderer;
 
 public class MainMenuScreen implements Screen {
 	final PacmanGame game;
-	private boolean isTouched = true;
+	private boolean isTouched;
+	OrthographicCamera camera;
+	SpriteBatch batch;
+	Viewport viewport;
+	private BitmapFont font;
+
+	private Texture mainscreen;
+
+	private int point = 0;
+	private float deltaT = 0f;
 
 	public MainMenuScreen(PacmanGame game) {
+		isTouched = true;
 		this.game = game;
+		batch = new SpriteBatch();
+		font = new BitmapFont();
+
+		mainscreen = new Texture("images/mainscreen.png");
 	}
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-		SpriteBatch batch = new SpriteBatch();
-		BitmapFont font = new BitmapFont();
+		deltaT+=delta;
+		if(deltaT > 1f){
+			deltaT = 0;
+			point++;
+			if(point > 3)
+				point = 0;
+		}
 
 		batch.begin();
-		font.draw(batch, "Welcome to PacMan!!! ", 100, 400);
-		font.draw(batch, "Tap anywhere to begin!", 100, 350);
+		batch.draw(mainscreen, 0, 100,
+				mainscreen.getWidth()/2,
+				mainscreen.getHeight()/2);
+
+		String txt = "Tap screen for new game";
+		for(int i = 0; i < point; i++)
+			txt+=".";
+
+		font.draw(batch, txt,
+				mainscreen.getWidth()/4 - 80,
+				70);
 		batch.end();
 
 		if (Gdx.input.isTouched()) {
@@ -36,9 +73,6 @@ public class MainMenuScreen implements Screen {
 		}else {
 			isTouched = false;
 		}
-
-
-
 	}
 
 	@Override
@@ -46,7 +80,20 @@ public class MainMenuScreen implements Screen {
 	}
 
 	@Override
-	public void show() { }
+	public void show() {
+		Gdx.graphics.setDisplayMode(
+				mainscreen.getWidth()/2,
+				mainscreen.getHeight()/2 + 100,
+				false);
+
+		this.batch = new SpriteBatch();
+		this.camera = new OrthographicCamera();
+		this.viewport = new StretchViewport(
+				mainscreen.getWidth()/2,
+				mainscreen.getHeight()/2 + 100,
+				camera);
+		this.viewport.apply();
+	}
 
 	@Override
 	public void hide() {}
