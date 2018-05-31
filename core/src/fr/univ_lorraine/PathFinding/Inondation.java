@@ -40,6 +40,12 @@ public class Inondation {
         //Recherche de la direction,
         //On as la position actuelle (source)
         //Et la prochaine position (nextPos)
+        if(nextPos.y > source.y)
+            nextDir = 0;
+        if(nextPos.x > source.x)
+            nextDir = 1;
+        
+
 
         return nextDir;
     }
