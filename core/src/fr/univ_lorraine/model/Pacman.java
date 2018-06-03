@@ -7,7 +7,7 @@ public class Pacman extends Movable {
 	private int nextDir;
 
 	public Pacman(Vector2 pos, World world){
-		super(pos,world);
+		super(pos,world, 2f);
 		nextDir = RIGHT;
 	}
 

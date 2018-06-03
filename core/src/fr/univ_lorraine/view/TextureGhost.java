@@ -7,6 +7,9 @@ public class TextureGhost implements iTexturable{
 
 
 	private Ghost ghost;
+	float deltaT = 0f;
+
+	boolean switcher = true;
 
 	private Texture[] textures;
 
@@ -22,6 +25,42 @@ public class TextureGhost implements iTexturable{
 	}
 
 	public Texture getTexture(float delta) {
-		return textures[ghost.getEtat()];
+		if(ghost.getEtat() == Ghost.FUITE){
+			deltaT += delta;
+			float rest = ghost.getFearcooldown();
+
+			if(rest < 1){
+				if(deltaT > .1f){
+					deltaT = 0f;
+					switcher = !switcher;
+				}
+			}
+			else if(rest < 3){
+				if(deltaT > .2f){
+					deltaT = 0f;
+					switcher = !switcher;
+				}
+			}
+			else if(rest < 5){
+				if(deltaT > .5f){
+					deltaT = 0f;
+					switcher = !switcher;
+				}
+			}
+			else if(rest < 10) {
+				if (deltaT > 1f) {
+					deltaT = 0f;
+					switcher = !switcher;
+				}
+			}
+			else
+				switcher = true;
+
+
+			return textures[switcher? Ghost.FUITE : Ghost.POURSUITE];
+		}
+		else {
+			return textures[ghost.getEtat()];
+		}
 	}
 }

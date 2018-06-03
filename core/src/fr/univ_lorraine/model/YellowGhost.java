@@ -11,7 +11,7 @@ public class YellowGhost extends Ghost {
 
 
 	public YellowGhost(Vector2 pos, World w){
-		super(pos, w);
+		super(pos, w, 2f);
 		setDirection(UP);
 	}
 

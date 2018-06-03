@@ -17,5 +17,5 @@ public abstract class GameElement {
 	public Vector2 getPosition(){return pos;}
 	public Vector2 getSize(){return size;}
 
-	public void move(){}
+	public void move(float delta){}
 }

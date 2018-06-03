@@ -29,7 +29,6 @@ public class GameScreen implements Screen {
 	private World world;
 	private WorldRenderer worldRenderer;
 
-	private float deltaT = 0.0f;
 	public final static float FRAME = 0.03125f;
 	public final static int PPUX = 16, PPUY = 16;
 
@@ -45,6 +44,8 @@ public class GameScreen implements Screen {
 	public int lives = 3;
 
 
+	private float deltaT = 0.0f;
+	public final static float TIMETOSCORE = 1f;
 
 	public GameScreen(PacmanGame game) {
 		this.game = game;
@@ -126,15 +127,16 @@ public class GameScreen implements Screen {
 	}
 
 	private void move(float delta){
-		this.deltaT += delta;
-		while(deltaT > FRAME){
-			deltaT-= FRAME;
-			this.worldRenderer.move();
-			this.postMove();
-		}
+		this.worldRenderer.move(delta);
+		this.postMove(delta);
 	}
 
-	private void postMove(){
+	private void postMove(float delta){
+		deltaT += delta;
+		while(deltaT > TIMETOSCORE){
+			deltaT -= TIMETOSCORE;
+			score++;
+		}
 		//Test pour les pellets
 		int pacX = (int) (world.getPacman().getPosition().x + .5f);
 		int pacY = (int) (world.getPacman().getPosition().y + .5f);
@@ -144,8 +146,15 @@ public class GameScreen implements Screen {
 		//Manger un pellet
 		GameElement element = world.getMaze().get(pacX,pacY);
 		if(element != null && element.getClass() == Pellet.class){
-			score += 1;
+			score += 3;
 			world.getMaze().delete(pacX, pacY);
+			world.pelletNumber--;
+
+			if(world.pelletNumber <= 0){
+				game.setScreen(new WinScreen(game, score));
+				dispose();
+				return;
+			}
 		}
 
 
@@ -171,7 +180,7 @@ public class GameScreen implements Screen {
 						this.death();
 						break;
 					case Ghost.FUITE:
-						score+=10;
+						score+=15;
 						fantome.kill();
 						break;
 				}

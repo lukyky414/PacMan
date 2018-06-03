@@ -14,6 +14,8 @@ public abstract class Ghost extends Movable {
 	protected Inondation shortPath;
 
     public final static int POURSUITE = 0, FUITE = 1, MORT = 2;
+    public final static float FEARSPEED = 1.5f;
+    public final static float DEATSPEED = 3f;
     public final static float SPAWNCOOLDOWN = 3f; //ChangeDir s'execute toutes les GameScreen.FRAME ms
 	public final static float FEARCOOLDOWN = 20f;
 	private float fearCooldown;
@@ -21,9 +23,12 @@ public abstract class Ghost extends Movable {
     int etat;
     Vector2 SpawnPos;
 
-    public Ghost(Vector2 pos, World world){
-        super(pos, world);
+    float baseSpeed;
+
+    public Ghost(Vector2 pos, World world, float speed){
+        super(pos, world, speed);
         SpawnPos = new Vector2(pos);
+		this.baseSpeed = speed;
         this.resurect();
 		this.shortPath = new Inondation(world);
     }
@@ -31,12 +36,14 @@ public abstract class Ghost extends Movable {
     @Override
 	void changeState(){
     	if(cooldown > 0)
-    		cooldown -= GameScreen.FRAME;
+    		cooldown -= this.tickSpeed;
 
     	if(fearCooldown > 0){
-    		fearCooldown -= GameScreen.FRAME;
-    		if(fearCooldown <= 0)
-    			this.etat = POURSUITE;
+    		fearCooldown -= this.tickSpeed;
+    		if(fearCooldown <= 0) {
+    			this.setSpeed(baseSpeed);
+				this.etat = POURSUITE;
+			}
 		}
 	}
 
@@ -52,7 +59,21 @@ public abstract class Ghost extends Movable {
 			 * Cela s'execute donc bien a chaque GameScreen.FRAME*/
 		}
         else{
-			if (typeActuel == 2 || typeActuel == 3)
+        	if(typeActuel == 3)
+				switch(etat){
+					case MORT:
+						if(this.pos.equals(this.SpawnPos))
+							this.resurect();
+						else
+							this.cheminRetour(currX, currY);
+
+
+						break;
+
+					default://On est cense sortir
+						this.getOut(currX, currY);
+				}
+			else if (typeActuel == 2)
 				switch(etat){
 					case MORT:
 						this.cheminRetour(currX, currY);
@@ -76,12 +97,22 @@ public abstract class Ghost extends Movable {
         }
     }
 
+    private void getOut(int currX, int currY){
+    	this.setDirection(
+    			shortPath.getDirection(
+    					new GridPoint2(currX, currY),
+						new GridPoint2(
+								(int) this.world.getPacman().getPosition().x,
+								(int) this.world.getPacman().getPosition().y)
+		));
+	}
+
     protected void aleaDir(int currX, int currY){
     	int rdm;
     	do{
     		rdm = rand.nextInt(4);
-    		this.setDirection(rdm);
 		}while(!tryDir(currX, currY, rdm));
+		this.setDirection(rdm);
 	}
 
     abstract void rechercheDir(int currX, int currY);
@@ -95,20 +126,26 @@ public abstract class Ghost extends Movable {
 
     public void kill(){
     	super.imADeadGhost();
+    	this.setSpeed(DEATSPEED);
     	this.etat = MORT;
     	this.fearCooldown = 0f;
 	}
 
 	public void resurect(){
     	super.imALivingGhost();
+    	this.setDirection(NOTHING);
     	this.etat=POURSUITE;
     	this.cooldown=SPAWNCOOLDOWN;
     	this.fearCooldown=0;
+    	this.setSpeed(baseSpeed);
 	}
 
 	public void fear(){
-    	this.etat = FUITE;
-    	this.fearCooldown = Ghost.FEARCOOLDOWN;
+    	if(etat != MORT) {
+    		this.setSpeed(FEARSPEED);
+			this.etat = FUITE;
+			this.fearCooldown = Ghost.FEARCOOLDOWN;
+		}
 	}
 
 
@@ -170,18 +207,13 @@ public abstract class Ghost extends Movable {
 	//Si le fantome veut aller tout droit et qu'il est face à un mur, retourner faux pour
 	//Séléctionner une autre direction
     protected boolean tryDir(int currX, int currY, int direction){
+    	if(direction == 4)
+    		return false;
 		int nextx = getNextX(currX, direction);
 		int nexty = getNextY(currY, direction);
 
 		int type = this.world.getMaze().getMap(nextx, nexty);
-		if(type == 0)
-			return false;
-
-		if(direction == NOTHING)
-			return false;
-
-		int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
-		if(type == 3 && typeActuel != 3 && etat != MORT)
+		if(type == 0 || (type == 3 && this.etat != MORT))
 			return false;
 
 
@@ -194,5 +226,9 @@ public abstract class Ghost extends Movable {
 
 	public void afterReset(){
 		this.resurect();
+	}
+
+	public float getFearcooldown(){
+    	return fearCooldown;
 	}
 }

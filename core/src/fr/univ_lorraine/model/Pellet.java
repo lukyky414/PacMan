@@ -6,5 +6,6 @@ public class Pellet extends GameElement{
 
 	public Pellet(Vector2 pos, World world){
 		super(pos, world);
+		world.pelletNumber ++;
 	}
 }

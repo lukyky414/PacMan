@@ -11,10 +11,11 @@ public class World implements Iterable<GameElement> {
 	private ArrayList<SuperPellet> superPellet = new ArrayList<SuperPellet>();
 	private ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
 	private Maze maze;
+	public int pelletNumber = 0;
 
 	public World(){
 		this.maze = new Maze(this);
-		this.pacman = new Pacman(new Vector2(14,25), this);
+		this.pacman = new Pacman(new Vector2(12,13), this);
 
 
 		this.ghosts.add(new RedGhost(new Vector2(15, 17), this));
@@ -24,7 +25,7 @@ public class World implements Iterable<GameElement> {
 
 
 
-
+		this.superPellet.add(new SuperPellet(new Vector2(17, 4), this));
 		this.superPellet.add(new SuperPellet(new Vector2(1,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(26,7), this));
 		this.superPellet.add(new SuperPellet(new Vector2(1,28), this));

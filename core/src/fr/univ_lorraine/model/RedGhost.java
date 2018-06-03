@@ -9,7 +9,7 @@ public class RedGhost extends Ghost {
 
 
     public RedGhost(Vector2 pos, World w){
-        super(pos, w);
+        super(pos, w, 3f);
         setDirection(UP);
     }
 

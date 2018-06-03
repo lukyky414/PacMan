@@ -30,8 +30,8 @@ public class WorldRenderer {
 		this.batch.end();
 	}
 
-	public void move(){
+	public void move(float delta){
 		for (GameElement element : this.world)
-			element.move();
+			element.move(delta);
 	}
 }

@@ -7,7 +7,7 @@ import java.util.Random;
 public class PinkGhost extends Ghost{
 
     public PinkGhost(Vector2 pos, World w){
-        super(pos, w);
+        super(pos, w, 2.5f);
         setDirection(UP);
     }
 
@@ -59,13 +59,13 @@ public class PinkGhost extends Ghost{
 
 		//seloigner en X
 		if(currX > pacX)
-			if(this.tryDir(currX, currY, LEFT)){
+			if(this.tryDir(currX, currY, RIGHT)){
 				this.setDirection(RIGHT);
 				return;
 			}
 
 		if(currX < pacX)
-			if(this.tryDir(currX, currY, RIGHT)){
+			if(this.tryDir(currX, currY, LEFT)){
 				this.setDirection(LEFT);
 				return;
 			}
@@ -73,13 +73,13 @@ public class PinkGhost extends Ghost{
 
 		//seloigner en Y
 		if(currY > pacY)
-			if(this.tryDir(currX, currY, DOWN)){
+			if(this.tryDir(currX, currY, UP)){
 				this.setDirection(UP);
 				return;
 			}
 
 		if(currY < pacY)
-			if(this.tryDir(currX, currY, UP)){
+			if(this.tryDir(currX, currY, DOWN)){
 				this.setDirection(DOWN);
 				return;
 			}
