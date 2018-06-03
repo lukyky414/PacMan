@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80c3c12a-6b2e-4869-b873-cf986904bebb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -45,17 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ghost.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java">
+      <file leaf-file-name="YellowGhost.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
-              <folding>
-                <element signature="e#4714#4715#0" expanded="true" />
-                <element signature="e#4740#4741#0" expanded="true" />
-                <element signature="e#4768#4769#0" expanded="true" />
-                <element signature="e#4790#4791#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1367">
+              <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -63,8 +61,8 @@
       <file leaf-file-name="Movable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-884">
-              <caret line="28" column="29" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="29" />
+            <state relative-caret-position="187">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -841,7 +839,6 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureYellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/YellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureFactory.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/DeathScreen.java" />
@@ -855,10 +852,11 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
       </list>
     </option>
   </component>
@@ -1065,18 +1063,18 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3277487" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3277487" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info active="true" anchor="right" id="Coverage" order="4" side_tool="true" visible="true" weight="0.3296875" />
@@ -1130,7 +1128,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1306,24 +1304,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1415,13 +1399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="59" column="24" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -1429,33 +1406,6 @@
           <folding>
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#389#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="e#530#531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1474,16 +1424,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="e#530#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+        <state relative-caret-position="-1659">
+          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding>
             <element signature="e#4714#4715#0" expanded="true" />
             <element signature="e#4740#4741#0" expanded="true" />
             <element signature="e#4768#4769#0" expanded="true" />
             <element signature="e#4790#4791#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1367">
+          <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
         </state>
       </provider>
     </entry>

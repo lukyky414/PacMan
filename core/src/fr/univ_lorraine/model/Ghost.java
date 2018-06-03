@@ -77,7 +77,11 @@ public abstract class Ghost extends Movable {
     }
 
     protected void aleaDir(int currX, int currY){
-    	while(!tryDir(currX, currY, rand.nextInt(4))){}
+    	int rdm;
+    	do{
+    		rdm = rand.nextInt(4);
+    		this.setDirection(rdm);
+		}while(!tryDir(currX, currY, rdm));
 	}
 
     abstract void rechercheDir(int currX, int currY);
@@ -180,7 +184,7 @@ public abstract class Ghost extends Movable {
 		if(type == 3 && typeActuel != 3 && etat != MORT)
 			return false;
 
-		
+
 		return true;
 	}
 

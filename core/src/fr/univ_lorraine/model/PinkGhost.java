@@ -16,20 +16,32 @@ public class PinkGhost extends Ghost{
     	int pacX = (int) world.getPacman().getPosition().x;
 		int pacY = (int) world.getPacman().getPosition().y;
 
-    	//se rapprocher en X
+		//se rapprocher en X
 		if(currX > pacX)
-			if(this.tryDir(currX, currY, LEFT)) return;
+			if(this.tryDir(currX, currY, LEFT)){
+				this.setDirection(LEFT);
+				return;
+			}
 
 		if(currX < pacX)
-			if(this.tryDir(currX, currY, RIGHT)) return;
+			if(this.tryDir(currX, currY, RIGHT)){
+				this.setDirection(RIGHT);
+				return;
+			}
 
 
-        //se rapprocher en Y
+		//se rapprocher en Y
 		if(currY > pacY)
-			if(this.tryDir(currX, currY, DOWN)) return;
+			if(this.tryDir(currX, currY, DOWN)){
+				this.setDirection(DOWN);
+				return;
+			}
 
 		if(currY < pacY)
-			if(this.tryDir(currX, currY, UP)) return;
+			if(this.tryDir(currX, currY, UP)){
+				this.setDirection(UP);
+				return;
+			}
 
 
 		//continuer dans la meme dir pour eviter les demi tour inutile
@@ -47,18 +59,30 @@ public class PinkGhost extends Ghost{
 
 		//seloigner en X
 		if(currX > pacX)
-			if(this.tryDir(currX, currY, RIGHT)) return;
+			if(this.tryDir(currX, currY, LEFT)){
+				this.setDirection(RIGHT);
+				return;
+			}
 
 		if(currX < pacX)
-			if(this.tryDir(currX, currY, LEFT)) return;
+			if(this.tryDir(currX, currY, RIGHT)){
+				this.setDirection(LEFT);
+				return;
+			}
 
 
 		//seloigner en Y
 		if(currY > pacY)
-			if(this.tryDir(currX, currY, UP)) return;
+			if(this.tryDir(currX, currY, DOWN)){
+				this.setDirection(UP);
+				return;
+			}
 
 		if(currY < pacY)
-			if(this.tryDir(currX, currY, DOWN)) return;
+			if(this.tryDir(currX, currY, UP)){
+				this.setDirection(DOWN);
+				return;
+			}
 
 
 		//continuer dans la meme dir pour eviter les demi tour inutile

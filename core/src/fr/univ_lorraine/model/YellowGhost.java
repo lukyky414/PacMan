@@ -42,53 +42,72 @@ public class YellowGhost extends Ghost {
 		this.setDirection(max);
 	}
 
-	private Vector2 getNextIntersection(int currX, int currY, int direction){
-		int nextX = getNextX(currX, direction);
-		int nextY = getNextY(currY, direction);
+	private Vector2 getNextIntersection(int baseX, int baseY, int direction){
+		int nextX, nextY, type;
+		int currX = baseX, currY = baseY;
 
-		case UP:
+		if(!tryDir(currX, currY, direction))
+			return new Vector2(baseX, baseY);
+		do {
+			nextX = getNextX(currX, direction);
+			nextY = getNextY(currY, direction);
 
-		if(tryDir(currX, currY, RIGHT))
-			this.setDirection(RIGHT);
-		else {
-			if (tryDir(currX, currY, LEFT))
-				this.setDirection(LEFT);
-			else
-				this.setDirection(DOWN);
-		}
-		break;
-		case RIGHT:
-		if(tryDir(currX, currY, UP))
-			this.setDirection(UP);
-		else {
-			if (tryDir(currX, currY, DOWN))
-				this.setDirection(DOWN);
-			else
-				this.setDirection(LEFT);
-		}
-		break;
-		case DOWN:
-		if(tryDir(currX, currY, RIGHT))
-			this.setDirection(RIGHT);
-		else {
-			if (tryDir(currX, currY, LEFT))
-				this.setDirection(LEFT);
-			else
-				this.setDirection(UP);
-		}
-		break;
-		case LEFT:
-		if(tryDir(currX, currY, UP))
-			this.setDirection(UP);
-		else {
-			if (tryDir(currX, currY, DOWN))
-				this.setDirection(DOWN);
-			else
-				this.setDirection(RIGHT);
-		}
-		break;
+			//Si on rencontre le pacman dans ce couloir, on fait demi tour, donc on retourne a la pos de depart
+			if(nextX == (int) this.world.getPacman().getPosition().x
+					&& nextY == (int) this.world.getPacman().getPosition().y)
+				return new Vector2(baseX, baseY);
 
+			type = this.world.getMaze().getMap(nextX, nextY);
+			if (type == 0 || type == 3) {
+				switch (direction) {
+					case UP:
+						if (tryDir(currX, currY, RIGHT))
+							direction = RIGHT;
+						else {
+							if (tryDir(currX, currY, LEFT))
+								direction = LEFT;
+							else//demi tour, donc retourn a la pos de depart
+								return new Vector2(currX, currY);
+						}
+						break;
+					case RIGHT:
+						if (tryDir(currX, currY, UP))
+							direction = UP;
+						else {
+							if (tryDir(currX, currY, DOWN))
+								direction = DOWN;
+							else//demi tour, donc retourn a la pos de depart
+								return new Vector2(currX, currY);
+						}
+						break;
+					case DOWN:
+						if (tryDir(currX, currY, RIGHT))
+							direction = RIGHT;
+						else {
+							if (tryDir(currX, currY, LEFT))
+								direction = LEFT;
+							else//demi tour, donc retourn a la pos de depart
+								return new Vector2(currX, currY);
+						}
+						break;
+					case LEFT:
+						if (tryDir(currX, currY, UP))
+							direction = UP;
+						else {
+							if (tryDir(currX, currY, DOWN))
+								direction = DOWN;
+							else//demi tour, donc retourn a la pos de depart
+								return new Vector2(currX, currY);
+						}
+						break;
+				}
+			}
 
+			currX = getNextX(currX, direction);
+			currY = getNextY(currY, direction);
+		}while(type != 2);
+
+		return new Vector2(currX, currY);
 	}
 
 }
