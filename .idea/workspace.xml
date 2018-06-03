@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80c3c12a-6b2e-4869-b873-cf986904bebb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -37,7 +36,7 @@
       <file leaf-file-name="TextureGhost.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
+            <state relative-caret-position="374">
               <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding>
                 <element signature="e#530#531#0" expanded="true" />
@@ -49,8 +48,44 @@
       <file leaf-file-name="Ghost.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+            <state relative-caret-position="399">
+              <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+              <folding>
+                <element signature="e#4714#4715#0" expanded="true" />
+                <element signature="e#4740#4741#0" expanded="true" />
+                <element signature="e#4768#4769#0" expanded="true" />
+                <element signature="e#4790#4791#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Movable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-884">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vague.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Maze.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -806,7 +841,6 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureYellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/YellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureFactory.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" />
@@ -820,10 +854,11 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" />
       </list>
     </option>
   </component>
@@ -1030,7 +1065,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3277487" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3277487" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -1332,13 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1373,16 +1401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1404,30 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="e#530#531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -1439,10 +1433,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="e#530#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-884">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+        <state relative-caret-position="399">
+          <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+          <folding>
+            <element signature="e#4714#4715#0" expanded="true" />
+            <element signature="e#4740#4741#0" expanded="true" />
+            <element signature="e#4768#4769#0" expanded="true" />
+            <element signature="e#4790#4791#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

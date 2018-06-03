@@ -118,24 +118,45 @@ public abstract class Ghost extends Movable {
 		if(type == 0 || (type == 3 && this.etat != MORT)){
 			switch(this.getdirection()){
 				case UP:
-					if(!tryDir(currX, currY, RIGHT))
-						if(!tryDir(currX, currY, LEFT))
+
+					if(tryDir(currX, currY, RIGHT))
+						this.setDirection(RIGHT);
+					else {
+						if (tryDir(currX, currY, LEFT))
+							this.setDirection(LEFT);
+						else
 							this.setDirection(DOWN);
+					}
 					break;
 				case RIGHT:
-					if(!tryDir(currX, currY, UP))
-						if(!tryDir(currX, currY, DOWN))
+					if(tryDir(currX, currY, UP))
+						this.setDirection(UP);
+					else {
+						if (tryDir(currX, currY, DOWN))
+							this.setDirection(DOWN);
+						else
 							this.setDirection(LEFT);
+					}
 					break;
 				case DOWN:
-					if(!tryDir(currX, currY, RIGHT))
-						if(!tryDir(currX, currY, LEFT))
+					if(tryDir(currX, currY, RIGHT))
+						this.setDirection(RIGHT);
+					else {
+						if (tryDir(currX, currY, LEFT))
+							this.setDirection(LEFT);
+						else
 							this.setDirection(UP);
+					}
 					break;
 				case LEFT:
-					if(!tryDir(currX, currY, UP))
-						if(!tryDir(currX, currY, DOWN))
+					if(tryDir(currX, currY, UP))
+						this.setDirection(UP);
+					else {
+						if (tryDir(currX, currY, DOWN))
+							this.setDirection(DOWN);
+						else
 							this.setDirection(RIGHT);
+					}
 					break;
 			}
 		}
@@ -159,7 +180,7 @@ public abstract class Ghost extends Movable {
 		if(type == 3 && typeActuel != 3 && etat != MORT)
 			return false;
 
-		this.setDirection(direction);
+		
 		return true;
 	}
 
