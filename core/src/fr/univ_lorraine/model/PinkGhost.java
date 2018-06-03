@@ -45,7 +45,7 @@ public class PinkGhost extends Ghost{
 		int pacX = (int) world.getPacman().getPosition().x;
 		int pacY = (int) world.getPacman().getPosition().y;
 
-		//se rapprocher en X
+		//seloigner en X
 		if(currX > pacX)
 			if(this.tryDir(currX, currY, RIGHT)) return;
 
@@ -53,7 +53,7 @@ public class PinkGhost extends Ghost{
 			if(this.tryDir(currX, currY, LEFT)) return;
 
 
-		//se rapprocher en Y
+		//seloigner en Y
 		if(currY > pacY)
 			if(this.tryDir(currX, currY, UP)) return;
 

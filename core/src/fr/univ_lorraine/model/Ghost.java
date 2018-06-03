@@ -118,23 +118,23 @@ public abstract class Ghost extends Movable {
 		if(type == 0 || (type == 3 && this.etat != MORT)){
 			switch(this.getdirection()){
 				case UP:
-					if(!tryDir(currX+1, currY, RIGHT))
-						if(!tryDir(currX-1, currY, LEFT))
+					if(!tryDir(currX, currY, RIGHT))
+						if(!tryDir(currX, currY, LEFT))
 							this.setDirection(DOWN);
 					break;
 				case RIGHT:
-					if(!tryDir(currX, currY+1, UP))
-						if(!tryDir(currX, currY-1, DOWN))
+					if(!tryDir(currX, currY, UP))
+						if(!tryDir(currX, currY, DOWN))
 							this.setDirection(LEFT);
 					break;
 				case DOWN:
-					if(!tryDir(currX+1, currY, RIGHT))
-						if(!tryDir(currX-1, currY, LEFT))
+					if(!tryDir(currX, currY, RIGHT))
+						if(!tryDir(currX, currY, LEFT))
 							this.setDirection(UP);
 					break;
 				case LEFT:
-					if(!tryDir(currX, currY+1, UP))
-						if(!tryDir(currX, currY-1, DOWN))
+					if(!tryDir(currX, currY, UP))
+						if(!tryDir(currX, currY, DOWN))
 							this.setDirection(RIGHT);
 					break;
 			}
