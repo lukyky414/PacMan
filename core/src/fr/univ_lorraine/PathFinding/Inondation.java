@@ -2,32 +2,43 @@ package fr.univ_lorraine.PathFinding;
 
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.model.GameElement;
+import fr.univ_lorraine.model.Movable;
 import fr.univ_lorraine.model.World;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Inondation {
-    World world;
+	World world;
+	GameElement target;
 
+	public Inondation(World world, GameElement target){
+		this.world = world;
+		this.target = target;
+	}
 
-    public int getDirection(Vector2 source, Vector2 target){
-        Stack<Vague> tsunami = new Stack<Vague>();
+    public int getDirection(GridPoint2 source){
+        LinkedList<Vague> tsunami = new LinkedList<Vague>();
         boolean[][] detruit = new boolean[world.getMaze().getWidth()][world.getMaze().getHeight()];//-> tout est à false
 
-		GridPoint2 pos = new GridPoint2((int)source.x, (int)source.y);
-		GridPoint2 cible = new GridPoint2((int)target.x, (int)target.y);
+		GridPoint2 cible = new GridPoint2((int)target.getPosition().x, (int)target.getPosition().y);
 
-        tsunami.add(new Vague(pos, cible, world.getMaze()));
+        tsunami.add(new Vague(source, cible, world.getMaze()));
 
         boolean stop = false;
         Vague last;
 
         do{
-            if(tsunami.size() == 0)
-                throw new NullPointerException("Target not in same maze");
-            last = tsunami.pop();
+
+            last = tsunami.pollFirst();
+
+			if(last == null)
+				throw new NullPointerException("Target not in same maze");
+
             if(!detruit[last.getPos().x][last.getPos().y]){
                 stop = stop || last.inonder(tsunami);
+
                 detruit[last.getPos().x][last.getPos().y] = true;
             }
         }while(!stop);
@@ -41,13 +52,13 @@ public class Inondation {
         //On as la position actuelle (source)
         //Et la prochaine position (nextPos)
         if(nextPos.y > source.y)
-            nextDir = 0;
+            nextDir = Movable.UP;
         if(nextPos.x > source.x)
-            nextDir = 1;
+            nextDir = Movable.RIGHT;
         if(nextPos.y < source.y)
-            nextDir = 2;
+            nextDir = Movable.DOWN;
         if(nextPos.x < source.x)
-            nextDir = 3;
+            nextDir = Movable.LEFT;
         
 
 

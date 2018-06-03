@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java" line="40" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="80c3c12a-6b2e-4869-b873-cf986904bebb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost4.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghost4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostDead.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostDead.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostEscaping.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/ghostEscaping.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacman-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacman-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanDown.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanLeft.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanRight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pacmanUp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pellet.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/pellet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/pacman_jar/images/superpellet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -41,6 +26,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/pacman$Desktop.ic" NAME="Desktop Coverage Results" MODIFIED="1527774878826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -48,20 +36,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
+      <file leaf-file-name="Inondation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="716">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenuScreen.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
+      <file leaf-file-name="YellowGhost.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+            <state relative-caret-position="391">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vague.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -811,8 +821,6 @@
       <list>
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Inondation.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Vague.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TexturePinkGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureRedGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/view/TextureGhost.java" />
@@ -824,16 +832,18 @@
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/BlueGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/PinkGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/RedGhost.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Movable.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pacman.java" />
-        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/Iterators/WorldIterator.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/DeathScreen.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PacmanGame.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java" />
+        <option value="$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java" />
       </list>
     </option>
   </component>
@@ -860,6 +870,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -896,6 +909,22 @@
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
+              <item name="PathFinding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pacman" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="univ_lorraine" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -907,9 +936,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1030,14 +1056,15 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="right" id="Coverage" order="4" side_tool="true" visible="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3297491" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" weight="0.3297491" />
@@ -1080,7 +1107,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java</url>
+          <line>68</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1097,11 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4021#4022#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1233,20 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Pellet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1265,13 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-260">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="84" column="61" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1338,22 +1353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="156" column="24" lean-forward="true" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4021#4022#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1385,13 +1388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="44" column="76" lean-forward="true" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desktop/src/fr/univ_lorraine/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1411,17 +1407,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="661">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/MainMenuScreen.java">
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="799">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Vague.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/YellowGhost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/PathFinding/Inondation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/fr/univ_lorraine/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
         </state>
       </provider>
     </entry>

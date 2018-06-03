@@ -3,6 +3,7 @@ package fr.univ_lorraine.PathFinding;
 import com.badlogic.gdx.math.GridPoint2;
 import fr.univ_lorraine.model.Maze;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Vague {
@@ -24,48 +25,44 @@ public class Vague {
     public GridPoint2 getPos(){return source;}
     public Vague getFather(){return father;}
 
-    public boolean inonder(Stack<Vague> tsunami){
+    public boolean inonder(LinkedList<Vague> tsunami){
         if(source.equals(target))//->.equals test bien les positions?
             return true;
 
+		//chercher cases vides autour,
+		//créer une vague avec chaques coordonnées de cases trouvée en tant que source
+		GridPoint2[] nextPos = {//up, right, down, left
+				new GridPoint2 (source.x, source.y +1),
+				new GridPoint2 (source.x+1, source.y),
+				new GridPoint2 (source.x, source.y -1),
+				new GridPoint2(source.x-1, source.y)
+		};
 
-        //chercher cases vides autour,
-        //créer une vague avec chaques coordonnées de cases trouvée en tant que source
+		for(int i = 0; i < 4; i++){
+			//!\\Les cases vides autour -> ne pas rechercher en dehors du tableau
+			//Si ça dépasse la taille, revenir au début (tp de gauche à droite et inversement, ainsi que haut bas)
+			if(nextPos[i].x < 0)
+				nextPos[i].x = maze.getWidth()-1;
+			if(nextPos[i].x > maze.getWidth()-1)
+				nextPos[i].x = 0;
 
-        GridPoint2 left = new GridPoint2(source.x-1, source.y);
-        GridPoint2 right = new GridPoint2 (source.x+1, source.y);
-        GridPoint2 up = new GridPoint2 (source.x, source.y +1);
-        GridPoint2 down = new GridPoint2 (source.x, source.y -1);
-
-        if(maze.getMap(left.x, left.y) == 1 || maze.getMap(left.x, left.y) == 2 || maze.getMap(left.x, left.y) == 3)
-            tsunami.push(new Vague(left, target, maze));
-        if(maze.getMap(right.x, right.y) == 1 || maze.getMap(right.x, right.y) == 2 || maze.getMap(right.x, right.y) == 3)
-            tsunami.push(new Vague(right, target, maze));
-        if(maze.getMap(up.x, up.y) == 1 || maze.getMap(up.x, up.y) == 2 || maze.getMap(up.x, up.y) == 3)
-            tsunami.push(new Vague(up, target, maze));
-        if(maze.getMap(down.x, down.y) == 1 || maze.getMap(down.x, down.y) == 2 || maze.getMap(down.x, down.y) == 3)
-            tsunami.push(new Vague(down, target, maze));
-
-
-        //!\\Les cases vides autour -> ne pas rechercher en dehors du tableau
-        //Si ça dépasse la taille, revenir au début (tp de gauche à droite et inversement, ainsi que haut bas)
-        if(source.x < 0)
-            source.x = maze.getWidth()-1;
-        if(source.x > maze.getWidth())
-            source.x = 0;
-        if (source.y > maze.getHeight())
-            source.y = 0;
-        if (source.y < 0)
-            source.y = maze.getHeight()-1;
+			if (nextPos[i].y > maze.getHeight()-1)
+				nextPos[i].y = 0;
+			if (nextPos[i].y < 0)
+				nextPos[i].y = maze.getHeight()-1;
 
 
+			int type = maze.getMap(nextPos[i].x, nextPos[i].y);
+			if(type != 0)
+				tsunami.addLast(new Vague(this, nextPos[i], target, maze));
+		}
 
         return false;
     }
 
     public Vague getFirstSon(){
         Vague son = this;
-        while(father != null){
+        while(father != null && father.getFather() != null){
             son = father;
             father = father.getFather();
         }
