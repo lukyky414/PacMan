@@ -106,7 +106,7 @@ public class GameScreen implements Screen {
 
 			batch.end();
 			if (Gdx.input.isTouched()) {
-				game.setScreen(new MainMenuScreen(game));
+				game.setScreen(new WinScreen(game, score));
 				dispose();
 			}
 		}

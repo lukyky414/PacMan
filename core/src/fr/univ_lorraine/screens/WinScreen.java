@@ -34,7 +34,7 @@ public class WinScreen implements Screen {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
 
-		score = score;
+		this.score = score;
 
 		mainscreen = new Texture("images/mainscreen.png");
 	}
