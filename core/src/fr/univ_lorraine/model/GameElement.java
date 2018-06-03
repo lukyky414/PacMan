@@ -1,6 +1,7 @@
 package fr.univ_lorraine.model;
 
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.PathFinding.Inondation;
 
 public abstract class GameElement {
 	protected Vector2 pos, size;

@@ -141,6 +141,7 @@ public class GameScreen implements Screen {
 
 		int ghX, ghY ;
 
+		//Manger un pellet
 		GameElement element = world.getMaze().get(pacX,pacY);
 		if(element != null && element.getClass() == Pellet.class){
 			score += 1;
@@ -148,12 +149,18 @@ public class GameScreen implements Screen {
 		}
 
 
+		//Manger un super pellet
 		for(int x= 0; x < world.getSuperPellet().size(); x++){
 			SuperPellet p = world.getSuperPellet().get(x);
-			if(p.getPosition().equals(this.world.getPacman().getPosition()))
+			if(p.getPosition().equals(this.world.getPacman().getPosition())) {
 				world.getSuperPellet().remove(x);
+
+				for(Ghost fantome : this.world.getGhost())
+					fantome.fear();
+			}
 		}
 
+		//Tomber sur un fantome
 		for(Ghost fantome : this.world.getGhost()){
 			ghX = (int) (fantome.getPosition().x + .5f);
 			ghY = (int) (fantome.getPosition().y + .5f);
@@ -164,6 +171,7 @@ public class GameScreen implements Screen {
 						this.death();
 						break;
 					case Ghost.FUITE:
+						score+=10;
 						fantome.kill();
 						break;
 				}

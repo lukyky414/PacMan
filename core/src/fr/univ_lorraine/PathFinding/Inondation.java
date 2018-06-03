@@ -11,20 +11,16 @@ import java.util.Stack;
 
 public class Inondation {
 	World world;
-	GameElement target;
 
-	public Inondation(World world, GameElement target){
+	public Inondation(World world){
 		this.world = world;
-		this.target = target;
 	}
 
-    public int getDirection(GridPoint2 source){
+    public int getDirection(GridPoint2 source, GridPoint2 target){
         LinkedList<Vague> tsunami = new LinkedList<Vague>();
         boolean[][] detruit = new boolean[world.getMaze().getWidth()][world.getMaze().getHeight()];//-> tout est à false
 
-		GridPoint2 cible = new GridPoint2((int)target.getPosition().x, (int)target.getPosition().y);
-
-        tsunami.add(new Vague(source, cible, world.getMaze()));
+        tsunami.add(new Vague(source, target, world.getMaze()));
 
         boolean stop = false;
         Vague last;

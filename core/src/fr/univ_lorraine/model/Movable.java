@@ -1,6 +1,7 @@
 package fr.univ_lorraine.model;
 
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.screens.GameScreen;
 
 public abstract class Movable extends GameElement{
 	public final static int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3, NOTHING = 4;
@@ -11,6 +12,8 @@ public abstract class Movable extends GameElement{
 	private int direction = RIGHT;
 	private boolean passThrougGate = false;
 	private Vector2 SpawnPos;
+
+	public float lastChangeDir = 0f;
 
 
 	public int getdirection(){ return this.direction;}
@@ -23,6 +26,7 @@ public abstract class Movable extends GameElement{
 
 
 	abstract void changeDir(int currX, int currY);
+	abstract void changeState();
 	public abstract void afterReset();
 
 	public void reset(){
@@ -35,6 +39,8 @@ public abstract class Movable extends GameElement{
 		int currX = (int) this.pos.x;
 		int currY = (int) this.pos.y;
 		boolean stop = false;
+
+		changeState();
 
 		if(this.pos.x % 1 == 0 && this.pos.y % 1 == 0) {//position entiere:
 			changeDir(currX, currY);

@@ -1,6 +1,9 @@
 package fr.univ_lorraine.model;
 
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.math.Vector2;
+import fr.univ_lorraine.PathFinding.Inondation;
 import fr.univ_lorraine.screens.GameScreen;
 
 import java.util.Random;
@@ -8,10 +11,11 @@ import java.util.Random;
 
 public abstract class Ghost extends Movable {
 	Random rand = new Random(System.currentTimeMillis());
+	protected Inondation shortPath;
 
     public final static int POURSUITE = 0, FUITE = 1, MORT = 2;
     public final static float SPAWNCOOLDOWN = 3f; //ChangeDir s'execute toutes les GameScreen.FRAME ms
-	public final static float FEARCOOLDOWN = 15f;
+	public final static float FEARCOOLDOWN = 20f;
 	private float fearCooldown;
     private float cooldown;
     int etat;
@@ -21,44 +25,54 @@ public abstract class Ghost extends Movable {
         super(pos, world);
         SpawnPos = new Vector2(pos);
         this.resurect();
+		this.shortPath = new Inondation(world);
     }
 
     @Override
+	void changeState(){
+    	if(cooldown > 0)
+    		cooldown -= GameScreen.FRAME;
+
+    	if(fearCooldown > 0){
+    		fearCooldown -= GameScreen.FRAME;
+    		if(fearCooldown <= 0)
+    			this.etat = POURSUITE;
+		}
+	}
+
+    @Override
     void changeDir(int currX, int currY){
+
 		int typeActuel = this.world.getMaze().getMap((int)this.pos.x, (int)this.pos.y);
+
         if(cooldown > 0) {
-			this.cooldown -= GameScreen.FRAME;
 			this.setDirection(Movable.NOTHING);
 			/*Le cooldown ne s'effectue que lorsque l'on est sur une position reel
 			 * Une fois sur cette position, on ne bouge plus donc on reste sur une position reel
 			 * Cela s'execute donc bien a chaque GameScreen.FRAME*/
 		}
         else{
-        	switch(etat){
-				case MORT:
-					this.cheminRetour(currX, currY);
+			if (typeActuel == 2 || typeActuel == 3)
+				switch(etat){
+					case MORT:
+						this.cheminRetour(currX, currY);
 
-					break;
+						if(this.pos.equals(this.SpawnPos))
+							this.resurect();
 
-				case FUITE:
-					if(fearCooldown > 0){
-						this.fearCooldown -= GameScreen.FRAME;
-						this.rechercheFuiteDit(currX, currY);
 						break;
-					}
-					else{
-						this.etat = POURSUITE;
-					}
 
+					case FUITE:
+						this.rechercheFuiteDit(currX, currY);
 
-				case POURSUITE:
-					if (typeActuel == 2 || typeActuel == 3)
+						break;
+
+					case POURSUITE:
 						this.rechercheDir(currX, currY);
-					else
-						ContinueOnPath(currX, currY);
+				}
+			else
+				ContinueOnPath(currX, currY);
 
-					break;
-			}
         }
     }
 
@@ -70,16 +84,15 @@ public abstract class Ghost extends Movable {
     abstract void rechercheFuiteDit(int currX, int currY);
 
     private void cheminRetour(int currX, int currY) {
-
-
-
-        //TODO Utiliser le plus court chemin avec inondation pour revenir à SpawnPos
-
+    	this.setDirection(shortPath.getDirection(
+    			new GridPoint2(currX, currY),
+				new GridPoint2((int)SpawnPos.x, (int)SpawnPos.y)));
     }
 
     public void kill(){
     	super.imADeadGhost();
     	this.etat = MORT;
+    	this.fearCooldown = 0f;
 	}
 
 	public void resurect(){
@@ -91,6 +104,7 @@ public abstract class Ghost extends Movable {
 
 	public void fear(){
     	this.etat = FUITE;
+    	this.fearCooldown = Ghost.FEARCOOLDOWN;
 	}
 
 

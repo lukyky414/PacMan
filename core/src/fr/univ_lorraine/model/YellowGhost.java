@@ -8,18 +8,16 @@ import java.util.Random;
 
 public class YellowGhost extends Ghost {
 
-	Inondation inonde;
-
 
 	public YellowGhost(Vector2 pos, World w){
 		super(pos, w);
 		setDirection(UP);
-		inonde = new Inondation(w, w.getPacman());
 	}
 
 	@Override
 	void rechercheDir(int currX, int currY) {
-		this.setDirection(inonde.getDirection(new GridPoint2(currX, currY)));
+		Pacman pac = this.world.getPacman();
+		this.setDirection(shortPath.getDirection(new GridPoint2(currX, currY), new GridPoint2((int)pac.getPosition().x, (int)pac.getPosition().y)));
 	}
 
 	@Override

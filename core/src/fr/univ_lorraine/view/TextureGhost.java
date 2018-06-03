@@ -15,8 +15,8 @@ public class TextureGhost implements iTexturable{
 		this.ghost = ghost;
 		textures = new Texture[]{
 				new Texture(texutreAlive),
+				new Texture("images/ghostEscaping.png"),
 				new Texture("images/ghostDead.png"),
-				new Texture("images/ghostEscaping.png")
 		};
 
 	}

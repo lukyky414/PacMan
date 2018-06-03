@@ -11,6 +11,11 @@ public class Pacman extends Movable {
 		nextDir = RIGHT;
 	}
 
+	@Override
+	void changeState() {
+
+	}
+
 
 	public void newDirection(int direction){this.nextDir = direction;}
 
