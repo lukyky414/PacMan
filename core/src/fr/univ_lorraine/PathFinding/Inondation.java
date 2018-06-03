@@ -44,6 +44,10 @@ public class Inondation {
             nextDir = 0;
         if(nextPos.x > source.x)
             nextDir = 1;
+        if(nextPos.y < source.y)
+            nextDir = 2;
+        if(nextPos.x < source.x)
+            nextDir = 3;
         
 
 
