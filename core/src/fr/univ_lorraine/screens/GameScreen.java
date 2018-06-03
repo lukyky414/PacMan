@@ -54,7 +54,7 @@ public class GameScreen implements Screen {
 		font = new BitmapFont();
 
 		live = new Texture("images/pacmanRight-2.png");
-		died = new Texture("images/death.png");
+		died = new Texture("images/gameover.png");
 		title = new Texture("images/title.png");
 	}
 
