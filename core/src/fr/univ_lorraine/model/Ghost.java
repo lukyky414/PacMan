@@ -156,10 +156,12 @@ public abstract class Ghost extends Movable {
     	int nextY = getNextY(currY, getdirection());
 
 		int type = this.world.getMaze().getMap(nextX, nextY);
+		//si la prochaine position dans la direction choisie est un mur ou un mur fantome et que le fantome est sorti
 		if(type == 0 || (type == 3 && this.etat != MORT)){
 			switch(this.getdirection()){
+				//selon la direction choisie, on va tester si on peut aller dans les autres directions
 				case UP:
-
+					//On regarde si le chemin continue à droite, à gauche, sinon on fait demi-tour
 					if(tryDir(currX, currY, RIGHT))
 						this.setDirection(RIGHT);
 					else {

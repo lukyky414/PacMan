@@ -53,11 +53,15 @@ public abstract class Movable extends GameElement{
 			changeState();
 
 			if (this.pos.x % 1 == 0 && this.pos.y % 1 == 0) {//position entiere:
+				//On ne peut déterminer le prochain comportement (arrêt parce que mur, chagement de dir)
+				//Que si on a terminé le mouvement en cours (pos entière)
 				changeDir(currX, currY);
 
 				int nextx = getNextX(currX, this.getdirection());
 				int nexty = getNextY(currY, this.getdirection());
 
+				// Le type renvoie la case sur laquelle on va
+				// Si c'est un mur il faut s'arrêter là où on est
 				int type = this.world.getMaze().getMap(nextx, nexty);
 				if (type == 0)
 					stop = true;
@@ -69,6 +73,9 @@ public abstract class Movable extends GameElement{
 					stop = true;
 			}
 
+
+			//Mais si on contrôle l'objet qui bouge on peut dire à l'avance où on veut qu'il aille
+			//Permet de suivre un chemin
 			if (!stop)
 				switch (direction) {
 					case UP:

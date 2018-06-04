@@ -16,9 +16,13 @@ public class WorldRenderer {
 	}
 
 
+	//Delta = le temps qu'il a fallu pour que tout soit rendered comme il faut
+	// = Temps d'une frame entière
 	public void render(float delta) {
+		//Batch dessine des rectangles aux positions demandés par le GameElement
 		this.batch.begin();
 
+		//Il dessine les rectangles (TextureFactory se charge des dessins) à l'endroit où le GameElement le dit
 		for (GameElement element : this.world)
 			this.batch.draw(
 					TextureFactory.getInstance().getTexture(element.getClass(), delta),
@@ -27,6 +31,8 @@ public class WorldRenderer {
 					element.getSize().x * GameScreen.PPUX,
 					element.getSize().y * GameScreen.PPUY);
 
+		//Ensuite il termine et redessinera à chaque fois qu'il y a un mouvement
+		//C'est delta qui fera en sorte que le mouvement soit fluide
 		this.batch.end();
 	}
 
